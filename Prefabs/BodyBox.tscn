@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://chu8dabspw48v"]
+
+[ext_resource type="Script" uid="uid://2s30j30blwh2" path="res://Scripts/BodyBox.gd" id="1_f8104"]
+[ext_resource type="Texture2D" uid="uid://b7fntpjepnvc8" path="res://Textures/TempFrame.png" id="2_ebm3l"]
+
+[node name="BodyBox" type="Control" unique_id=2102669481]
+custom_minimum_size = Vector2(135, 135)
+custom_maximum_size = Vector2(135, 135)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f8104")
+
+[node name="CardTexture" type="TextureRect" parent="." unique_id=1251167160]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FrameTexture" type="TextureRect" parent="." unique_id=33937766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ebm3l")
