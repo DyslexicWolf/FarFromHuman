@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cd6k1yepaxl7o"]
+
+[ext_resource type="Script" uid="uid://2yd8fmaq1emh" path="res://Scripts/StateMachine/UIPauseState.gd" id="1_wy7co"]
+
+[node name="UIPauseState" type="Control" unique_id=824334489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wy7co")
+
+[node name="Panel" type="Panel" parent="." unique_id=1270639567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempLabel" type="Label" parent="." unique_id=1796145266]
+layout_mode = 0
+offset_left = 801.0
+offset_top = 24.0
+offset_right = 1045.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 35
+text = "In UI Pause state"
