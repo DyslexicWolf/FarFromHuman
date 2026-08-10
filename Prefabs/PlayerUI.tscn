@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chqaeg0c4s02u"]
+
+[ext_resource type="Script" uid="uid://un0qttrubjmh" path="res://Scripts/PlayerUI.gd" id="1_ekdfu"]
+[ext_resource type="PackedScene" uid="uid://cg08wd2xx8lhx" path="res://Prefabs/CharacterSheet.tscn" id="1_mr8kr"]
+
+[node name="PlayerUI" type="Control" unique_id=1911912189]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekdfu")
+
+[node name="CharacterSheet" parent="." unique_id=1277464670 instance=ExtResource("1_mr8kr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://fdya7vaypamp"]
 
+[ext_resource type="PackedScene" uid="uid://chqaeg0c4s02u" path="res://Prefabs/PlayerUI.tscn" id="1_iukft"]
+
 [node name="Game" type="Node3D" unique_id=1810354463]
+
+[node name="PlayerUI" parent="." unique_id=1911912189 instance=ExtResource("1_iukft")]
