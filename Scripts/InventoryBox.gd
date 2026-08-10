@@ -48,10 +48,19 @@ func equip_card() -> void:
 				body_part_boxes.append(child)
 
 	var target_box: BodyPartBox = null
+	var viable_boxes: Array[BodyPartBox]
+
 	for box in body_part_boxes:
 		if card_resource.body_part_type == box.bodypart_box_type:
+			viable_boxes.append(box)
+
+	for box in viable_boxes:
+		if box.card_resource == null:
 			target_box = box
 			break
+
+	if target_box == null:
+		target_box = viable_boxes[0]
 
 	if target_box.card_resource == null:
 		target_box.card_resource = card_resource

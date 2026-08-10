@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://chu8dabspw48v" path="res://Prefabs/BodyBox.tscn" id="1_g0sds"]
 [ext_resource type="PackedScene" uid="uid://cpqlqd8iprr3k" path="res://Prefabs/InventoryBox.tscn" id="2_16te6"]
 [ext_resource type="Resource" uid="uid://b6vwktjdf1tko" path="res://Resources/ExampleCard.tres" id="2_e6mpe"]
+[ext_resource type="Resource" uid="uid://b6hg8ayrb6x8f" path="res://Resources/NormalArm.tres" id="2_in08m"]
+[ext_resource type="Resource" uid="uid://qrw5tgu8bqw7" path="res://Resources/NormalLeg.tres" id="4_40j1b"]
+[ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="6_e5shn"]
 
 [node name="CharacterSheet" type="Panel" unique_id=1277464670]
 anchors_preset = 15
@@ -45,6 +48,7 @@ offset_right = -105.0
 offset_bottom = 490.0
 grow_horizontal = 2
 bodypart_box_type = 2
+starting_card = ExtResource("2_in08m")
 box_index = 1
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
@@ -60,6 +64,7 @@ offset_right = 67.5
 offset_bottom = 492.0
 grow_horizontal = 2
 bodypart_box_type = 1
+starting_card = ExtResource("2_e6mpe")
 box_index = 2
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
@@ -90,6 +95,7 @@ offset_right = -15.0
 offset_bottom = 690.0
 grow_horizontal = 2
 bodypart_box_type = 3
+starting_card = ExtResource("4_40j1b")
 box_index = 4
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
@@ -142,7 +148,7 @@ offset_top = -67.5
 offset_right = 155.0
 offset_bottom = 67.5
 grow_vertical = 2
-starting_card = ExtResource("2_e6mpe")
+starting_card = ExtResource("6_e5shn")
 body_parts_panel = NodePath("../../BodyPartsPanel")
 inventory_panel = NodePath("..")
 

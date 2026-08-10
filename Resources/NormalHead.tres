@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://bf5rlfmjf880x"]
+
+[ext_resource type="Texture2D" uid="uid://1nteglrymm23" path="res://Textures/TEX_NormalHead.png" id="1_eovo7"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_5f0xg"]
+
+[resource]
+script = ExtResource("2_5f0xg")
+card_name = "Normal Head"
+card_texture = ExtResource("1_eovo7")
+attack_damage = 0
+block_amount = 0
+energy_cost = 0
+weakness_amount = 1
+metadata/_custom_type_script = "uid://drsqxb1onfrgq"

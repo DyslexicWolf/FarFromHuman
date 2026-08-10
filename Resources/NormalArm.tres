@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://b6hg8ayrb6x8f"]
+
+[ext_resource type="Texture2D" uid="uid://bkd5ecqbp0xju" path="res://Textures/TEX_NormalArm.png" id="1_eo5eh"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_cfjfv"]
+
+[resource]
+script = ExtResource("2_cfjfv")
+card_name = "Normal Arm"
+card_texture = ExtResource("1_eo5eh")
+block_amount = 3
+body_part_type = 2
+metadata/_custom_type_script = "uid://drsqxb1onfrgq"

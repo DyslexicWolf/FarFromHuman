@@ -5,7 +5,7 @@ var inventory_cards: Array[CardResource]
 
 
 func _init() -> void:
-	#a size for the base amount that the player will start with, will need to be adjusted later when we add more slots for bodyparts for the player
+	#A size for the base amount that the player will start with, will need to be adjusted later when we add more slots for bodyparts for the player
 	body_part_cards.resize(6)
 	inventory_cards.resize(2)
 

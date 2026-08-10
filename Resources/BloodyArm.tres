@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://dnfw8w45lxe4"]
+
+[ext_resource type="Texture2D" uid="uid://da6jjm7p5cylb" path="res://Textures/TEX_BloodyArm.png" id="1_uy6va"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_xlock"]
+
+[resource]
+script = ExtResource("2_xlock")
+card_name = "Bloody Arm"
+card_texture = ExtResource("1_uy6va")
+attack_damage = 0
+block_amount = 3
+energy_cost = 2
+body_part_type = 2
+weakness_amount = 1
+metadata/_custom_type_script = "uid://drsqxb1onfrgq"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://b0wwqd0pqcsw5"]
+
+[ext_resource type="Texture2D" uid="uid://dq5uuq6m1medp" path="res://Textures/TEX_BloodyLeg.png" id="1_srh8t"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_0j4f5"]
+
+[resource]
+script = ExtResource("2_0j4f5")
+card_name = "Bloody Leg"
+card_texture = ExtResource("1_srh8t")
+attack_damage = 4
+block_amount = 0
+energy_cost = 2
+body_part_type = 3
+metadata/_custom_type_script = "uid://drsqxb1onfrgq"
