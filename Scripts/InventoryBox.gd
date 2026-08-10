@@ -21,10 +21,13 @@ var inventory_boxes: Array[InventoryBox]
 @export var box_index: int
 @export var body_parts_panel: Panel
 @export var inventory_panel: Panel
+@export var card_tooltip: PanelContainer
 
 
 func _ready() -> void:
 	card_resource = starting_card
+	mouse_entered.connect(on_mouse_entered)
+	mouse_exited.connect(on_mouse_exited)
 
 
 func _on_card_changed() -> void:
@@ -73,23 +76,30 @@ func equip_card() -> void:
 	Inventory.remove_card_from_inventory(box_index)
 
 
-func _make_custom_tooltip(_for_text: String) -> Object:
-	if not card_resource:
+func on_mouse_entered() -> void:
+	if card_resource == null:
 		return
-	var tooltip_instance := preload("uid://b5dgysfbqkqbf").instantiate()
-	var card_cost := tooltip_instance.get_node("MarginContainerCost/CardCost")
-	var card_name := tooltip_instance.get_node("VBoxContainer/MarginContainerName/CardName")
-	var card_explanation := tooltip_instance.get_node(
+
+	var card_cost := card_tooltip.get_node("MarginContainerCost/CardCost")
+	var card_name := card_tooltip.get_node("VBoxContainer/MarginContainerName/CardName")
+	var card_art := card_tooltip.get_node("VBoxContainer/MarginContainerArt/CardArt")
+	var card_explanation := card_tooltip.get_node(
 		"VBoxContainer/MarginContainerExplanation/CardExplanation"
 	)
-	var card_attack := tooltip_instance.get_node("MarginContainerAttackstat/CardAttackstat")
-	var card_block := tooltip_instance.get_node("MarginContainerBlockstat/CardBlockstat")
+	var card_attack := card_tooltip.get_node("MarginContainerAttackstat/CardAttackstat")
+	var card_block := card_tooltip.get_node("MarginContainerBlockstat/CardBlockstat")
 
 	card_cost.text = str(card_resource.energy_cost)
 	card_name.text = card_resource.card_name
+	card_art.texture = card_resource.card_texture
 	card_explanation.text = card_resource.explanation
 	card_attack.text = str(card_resource.attack_damage)
 	card_block.text = str(card_resource.block_amount)
 
-	tooltip_instance.position = Vector2(1300, 75)
-	return tooltip_instance
+	card_tooltip.visible = true
+
+
+func on_mouse_exited() -> void:
+	if card_resource == null:
+		return
+	card_tooltip.visible = false
