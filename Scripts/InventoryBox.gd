@@ -1,6 +1,9 @@
 class_name InventoryBox
 extends Control
 
+signal is_being_hovered()
+signal stopped_being_hovered()
+
 @onready var card_texture: TextureRect = $CardTexture
 
 var card_resource: CardResource:
@@ -80,6 +83,7 @@ func on_mouse_entered() -> void:
 	if card_resource == null:
 		return
 
+	is_being_hovered.emit()
 	var card_cost := card_tooltip.get_node("MarginContainerCost/CardCost")
 	var card_name := card_tooltip.get_node("VBoxContainer/MarginContainerName/CardName")
 	var card_art := card_tooltip.get_node("VBoxContainer/MarginContainerArt/CardArt")
@@ -102,4 +106,5 @@ func on_mouse_entered() -> void:
 func on_mouse_exited() -> void:
 	if card_resource == null:
 		return
+
 	card_tooltip.visible = false
