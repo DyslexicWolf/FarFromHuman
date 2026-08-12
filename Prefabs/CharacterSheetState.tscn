@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://b6hg8ayrb6x8f" path="res://Resources/NormalArm.tres" id="2_in08m"]
 [ext_resource type="Resource" uid="uid://qrw5tgu8bqw7" path="res://Resources/NormalLeg.tres" id="4_40j1b"]
 [ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="6_e5shn"]
-[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/Card.tscn" id="8_37yuc"]
+[ext_resource type="PackedScene" uid="uid://b5dgysfbqkqbf" path="res://Prefabs/CardTooltip.tscn" id="8_37yuc"]
 
 [node name="CharacterSheetState" type="Control" unique_id=2122658571]
 layout_mode = 3
@@ -48,7 +48,7 @@ bodypart_box_type = 0
 box_index = 0
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="BodyPartBox2" parent="Panel/BodyPartsPanel" unique_id=668408903 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("1_g0sds")]
 layout_mode = 1
@@ -65,7 +65,7 @@ starting_card = ExtResource("2_in08m")
 box_index = 1
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="BodyPartBox3" parent="Panel/BodyPartsPanel" unique_id=1999757771 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("1_g0sds")]
 layout_mode = 1
@@ -82,7 +82,7 @@ starting_card = ExtResource("2_e6mpe")
 box_index = 2
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="BodyPartBox4" parent="Panel/BodyPartsPanel" unique_id=522226659 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("1_g0sds")]
 layout_mode = 1
@@ -98,7 +98,7 @@ bodypart_box_type = 2
 box_index = 3
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="BodyPartBox5" parent="Panel/BodyPartsPanel" unique_id=207151825 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("1_g0sds")]
 layout_mode = 1
@@ -115,7 +115,7 @@ starting_card = ExtResource("4_40j1b")
 box_index = 4
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="BodyPartBox6" parent="Panel/BodyPartsPanel" unique_id=1816529298 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("1_g0sds")]
 layout_mode = 1
@@ -131,7 +131,7 @@ bodypart_box_type = 3
 box_index = 5
 body_parts_panel = NodePath("..")
 inventory_panel = NodePath("../../InventoryPanel")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/BodyPartsPanel" unique_id=613627600]
 layout_mode = 1
@@ -169,7 +169,7 @@ grow_vertical = 2
 starting_card = ExtResource("6_e5shn")
 body_parts_panel = NodePath("../../BodyPartsPanel")
 inventory_panel = NodePath("..")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="InventoryBox2" parent="Panel/InventoryPanel" unique_id=1615854278 node_paths=PackedStringArray("body_parts_panel", "inventory_panel", "card_tooltip") instance=ExtResource("2_16te6")]
 layout_mode = 1
@@ -187,7 +187,7 @@ grow_vertical = 2
 box_index = 1
 body_parts_panel = NodePath("../../BodyPartsPanel")
 inventory_panel = NodePath("..")
-card_tooltip = NodePath("../../CardTooltipPanel/Card")
+card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/InventoryPanel" unique_id=624182922]
 layout_mode = 1
@@ -213,11 +213,10 @@ offset_top = 40.0
 offset_right = 1840.0
 offset_bottom = 1017.0
 
-[node name="Card" parent="Panel/CardTooltipPanel" unique_id=655306505 instance=ExtResource("8_37yuc")]
+[node name="CardTooltip" parent="Panel/CardTooltipPanel" unique_id=781376861 instance=ExtResource("8_37yuc")]
 visible = false
-custom_maximum_size = Vector2(-1, 850)
 layout_mode = 0
-offset_left = 19.0
-offset_top = 14.0
-offset_right = 244.0
-offset_bottom = 514.0
+offset_left = 65.0
+offset_top = 57.0
+offset_right = 290.0
+offset_bottom = 357.0

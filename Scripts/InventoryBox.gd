@@ -1,9 +1,6 @@
 class_name InventoryBox
 extends Control
 
-signal is_being_hovered()
-signal stopped_being_hovered()
-
 @onready var card_texture: TextureRect = $CardTexture
 
 var card_resource: CardResource:
@@ -30,7 +27,6 @@ var inventory_boxes: Array[InventoryBox]
 func _ready() -> void:
 	card_resource = starting_card
 	mouse_entered.connect(on_mouse_entered)
-	mouse_exited.connect(on_mouse_exited)
 
 
 func _on_card_changed() -> void:
@@ -83,7 +79,6 @@ func on_mouse_entered() -> void:
 	if card_resource == null:
 		return
 
-	is_being_hovered.emit()
 	var card_cost := card_tooltip.get_node("MarginContainerCost/CardCost")
 	var card_name := card_tooltip.get_node("VBoxContainer/MarginContainerName/CardName")
 	var card_art := card_tooltip.get_node("VBoxContainer/MarginContainerArt/CardArt")
@@ -96,15 +91,9 @@ func on_mouse_entered() -> void:
 	card_cost.text = str(card_resource.energy_cost)
 	card_name.text = card_resource.card_name
 	card_art.texture = card_resource.card_texture
-	card_explanation.text = card_resource.explanation
+	card_explanation.text = KeywordGlossary.apply_meta_tags(card_resource.explanation)
 	card_attack.text = str(card_resource.attack_damage)
 	card_block.text = str(card_resource.block_amount)
 
-	card_tooltip.visible = true
-
-
-func on_mouse_exited() -> void:
-	if card_resource == null:
-		return
-
-	card_tooltip.visible = false
+	if card_tooltip.visible == false:
+		card_tooltip.visible = true
