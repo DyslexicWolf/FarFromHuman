@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://chqaeg0c4s02u"]
+
+[ext_resource type="Script" uid="uid://cvjgqive7rw64" path="res://Scripts/StateMachine/StateMachine.gd" id="1_ekdfu"]
+[ext_resource type="PackedScene" uid="uid://dd60lo3ob3lwi" path="res://Prefabs/UI/IdleUIState.tscn" id="3_cl5qf"]
+[ext_resource type="PackedScene" uid="uid://cg08wd2xx8lhx" path="res://Prefabs/UI/CharacterSheetState.tscn" id="3_x72b1"]
+[ext_resource type="PackedScene" uid="uid://cd6k1yepaxl7o" path="res://Prefabs/UI/PauseUIState.tscn" id="4_x72b1"]
+[ext_resource type="PackedScene" uid="uid://c27wli07mm8t6" path="res://Prefabs/UI/CombatUIState.tscn" id="5_88yxu"]
+
+[node name="PlayerUI" type="Control" unique_id=1911912189 node_paths=PackedStringArray("initial_state")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekdfu")
+initial_state = NodePath("IdleUIState")
+
+[node name="IdleUIState" parent="." unique_id=1301776963 instance=ExtResource("3_cl5qf")]
+layout_mode = 1
+
+[node name="CharacterSheetState" parent="." unique_id=2122658571 instance=ExtResource("3_x72b1")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PauseUIState" parent="." unique_id=824334489 instance=ExtResource("4_x72b1")]
+visible = false
+layout_mode = 1
+
+[node name="CombatUIState" parent="." unique_id=1992988984 instance=ExtResource("5_88yxu")]
+visible = false
+layout_mode = 1

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cg08wd2xx8lhx"]
 
 [ext_resource type="Script" uid="uid://cli5rjq4p2t06" path="res://Scripts/StateMachine/CharacterSheetState.gd" id="1_40j1b"]
-[ext_resource type="PackedScene" uid="uid://chu8dabspw48v" path="res://Prefabs/BodyBox.tscn" id="1_g0sds"]
-[ext_resource type="PackedScene" uid="uid://cpqlqd8iprr3k" path="res://Prefabs/InventoryBox.tscn" id="2_16te6"]
+[ext_resource type="PackedScene" uid="uid://chu8dabspw48v" path="res://Prefabs/UI/BodyBox.tscn" id="1_g0sds"]
+[ext_resource type="PackedScene" uid="uid://cpqlqd8iprr3k" path="res://Prefabs/UI/InventoryBox.tscn" id="2_16te6"]
 [ext_resource type="Resource" uid="uid://b6vwktjdf1tko" path="res://Resources/ExampleCard.tres" id="2_e6mpe"]
 [ext_resource type="Resource" uid="uid://b6hg8ayrb6x8f" path="res://Resources/NormalArm.tres" id="2_in08m"]
 [ext_resource type="Resource" uid="uid://qrw5tgu8bqw7" path="res://Resources/NormalLeg.tres" id="4_40j1b"]
 [ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="6_e5shn"]
-[ext_resource type="PackedScene" uid="uid://b5dgysfbqkqbf" path="res://Prefabs/CardTooltip.tscn" id="8_37yuc"]
+[ext_resource type="PackedScene" uid="uid://b5dgysfbqkqbf" path="res://Prefabs/UI/CardTooltip.tscn" id="8_37yuc"]
 
 [node name="CharacterSheetState" type="Control" unique_id=2122658571]
 layout_mode = 3

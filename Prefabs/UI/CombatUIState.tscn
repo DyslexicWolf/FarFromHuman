@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c27wli07mm8t6"]
+
+[ext_resource type="Script" uid="uid://cchfvmc0bq2ke" path="res://Scripts/StateMachine/CombatUIState.gd" id="1_iad1y"]
+[ext_resource type="Script" uid="uid://b4sv2axuupu3w" path="res://Scripts/PlayerHand.gd" id="2_ielgo"]
+
+[node name="CombatUIState" type="Control" unique_id=1992988984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iad1y")
+
+[node name="PlayerHand" type="Control" parent="." unique_id=457396667]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -205.0
+offset_right = 20.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_ielgo")
+
+[node name="EndTurnButton" type="Button" parent="." unique_id=675044041]
+layout_mode = 0
+offset_left = 1687.0
+offset_top = 943.0
+offset_right = 1869.0
+offset_bottom = 1006.0
+theme_override_font_sizes/font_size = 40
+text = "End Turn"

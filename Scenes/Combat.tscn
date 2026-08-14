@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blwyrjlch51ah"]
+
+[ext_resource type="Script" uid="uid://nm3e0n2bfm6w" path="res://Scripts/CombatManager.gd" id="1_5y3t8"]
+[ext_resource type="PackedScene" uid="uid://dlptd6w0vca70" path="res://Prefabs/Enemy.tscn" id="2_jr68y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_et8qu"]
+
+[node name="Combat" type="Node3D" unique_id=515621448]
+script = ExtResource("1_5y3t8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1140885028]
+transform = Transform3D(36.61583, 0, 0, 0, 1, 0, 0, 0, 29.938128, 0, 0, 0)
+mesh = SubResource("PlaneMesh_et8qu")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=56755528]
+transform = Transform3D(0.97218734, 0, 0.23420468, 0, 1, 0, -0.23420468, 0, 0.97218734, -8.561039, 3.5179303, 11.779617)
+
+[node name="Enemy" parent="." unique_id=1323056336 instance=ExtResource("2_jr68y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.853379, 1.1484601, 2.3703976)

@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://jms27n0gbn3h"]
 
-[ext_resource type="Texture2D" uid="uid://daiinj0p2rp8l" path="res://Textures/icon.svg" id="1_igq3k"]
+[ext_resource type="Script" uid="uid://48payptkkhtr" path="res://Scripts/CardDisplay.gd" id="1_biy6k"]
+[ext_resource type="Texture2D" uid="uid://daiinj0p2rp8l" path="res://Textures/icon.svg" id="1_njaq3"]
 
-[node name="Card" type="PanelContainer" unique_id=655306505]
+[node name="CardDisplay" type="PanelContainer" unique_id=655306505 node_paths=PackedStringArray("cost_label", "name_label", "art_texture_rect", "explanation_label", "attack_label", "block_label")]
 custom_minimum_size = Vector2(200, 300)
+script = ExtResource("1_biy6k")
+cost_label = NodePath("MarginContainerCost/CardCost")
+name_label = NodePath("VBoxContainer/MarginContainerName/CardName")
+art_texture_rect = NodePath("VBoxContainer/MarginContainerArt/CardArt")
+explanation_label = NodePath("VBoxContainer/MarginContainerExplanation/CardExplanation")
+attack_label = NodePath("MarginContainerAttackstat/CardAttackstat")
+block_label = NodePath("MarginContainerBlockstat/CardBlockstat")
+target_collision_mask = 4
 
 [node name="MarginContainerCost" type="MarginContainer" parent="." unique_id=1370128118]
 custom_minimum_size = Vector2(25, 0)
@@ -52,7 +61,7 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_igq3k")
+texture = ExtResource("1_njaq3")
 stretch_mode = 2
 
 [node name="MarginContainerExplanation" type="MarginContainer" parent="VBoxContainer" unique_id=2144600954]

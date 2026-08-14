@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dlptd6w0vca70"]
+
+[ext_resource type="Script" uid="uid://cledhmafokotl" path="res://Scripts/Enemy.gd" id="1_8k53p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggh84"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_et8qu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggh84"]
+albedo_color = Color(0.7137255, 0.16078432, 0.1254902, 1)
+
+[node name="Enemy" type="StaticBody3D" unique_id=1323056336]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_8k53p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=951904312]
+shape = SubResource("BoxShape3D_ggh84")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=683978342]
+transform = Transform3D(1.2506309, 0, 0, 0, 2.3582015, 0, 0, 0, 1.2251284, 0, 0, 0)
+mesh = SubResource("BoxMesh_et8qu")
+surface_material_override/0 = SubResource("StandardMaterial3D_ggh84")

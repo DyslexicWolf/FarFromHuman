@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dd60lo3ob3lwi"]
 
-[ext_resource type="Script" uid="uid://b74mr5rpv4k7i" path="res://Scripts/StateMachine/UIIdleState.gd" id="1_h3eiu"]
+[ext_resource type="Script" uid="uid://b74mr5rpv4k7i" path="res://Scripts/StateMachine/IdleUIState.gd" id="1_h3eiu"]
 
-[node name="UIIdleState" type="Control" unique_id=1301776963]
+[node name="IdleUIState" type="Control" unique_id=1301776963]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

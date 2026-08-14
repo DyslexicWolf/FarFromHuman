@@ -30,6 +30,6 @@ func _get_custom_preview_texture() -> Texture2D:
 
 
 ##Applies the weakness from this card to the target enemy.
-func _apply_weakness(enemy: Enemy) -> Enemy:
-	enemy.weakness_amount += weakness_amount
-	return enemy
+func _apply_weakness(entity: Entity) -> Entity:
+	entity.weakness_amount += weakness_amount
+	return entity

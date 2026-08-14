@@ -5,6 +5,7 @@ extends Node
 
 var current_state: State
 var states: Dictionary = { }
+var in_combat: bool = false
 
 
 func _ready() -> void:
