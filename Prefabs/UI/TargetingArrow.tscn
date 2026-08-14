@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfx7ouuyw7sy3"]
+
+[ext_resource type="Script" uid="uid://c06f4ev8ecl3w" path="res://Scripts/TargetingArrow.gd" id="1_efder"]
+
+[node name="TargetingArrow" type="Node2D" unique_id=543636879]
+script = ExtResource("1_efder")

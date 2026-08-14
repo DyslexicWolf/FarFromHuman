@@ -22,6 +22,8 @@ var dragging_card: CardDisplay = null
 func setup(combat_manager_ref: CombatManager) -> void:
 	combat_manager = combat_manager_ref
 	combat_manager.hand_changed.connect(refresh_hand)
+	resized.connect(layout_hand)
+	await get_tree().process_frame
 	refresh_hand()
 
 
@@ -34,6 +36,7 @@ func refresh_hand() -> void:
 		var card_ui := CARD_DISPLAY_SCENE.instantiate() as CardDisplay
 		add_child(card_ui)
 		card_ui.setup(card_resource)
+		card_ui.pivot_offset = card_ui.size / 2.0
 		card_ui.mouse_entered_card.connect(on_card_hovered.bind(card_ui))
 		card_ui.mouse_exited_card.connect(on_card_unhovered.bind(card_ui))
 		card_ui.drag_started.connect(on_card_drag_started.bind(card_ui))

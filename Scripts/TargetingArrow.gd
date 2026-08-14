@@ -1,11 +1,6 @@
 class_name TargetingArrow
 extends Node2D
 
-## Simple line from the dragged card to the mouse cursor, shown while
-## the player is dragging a card toward a target. Add a node with this
-## script under your CanvasLayer, above the Hand in the tree so it draws
-## on top.
-
 @export var line_width: float = 6.0
 @export var line_color: Color = Color(1.0, 0.85, 0.2, 0.9)
 
