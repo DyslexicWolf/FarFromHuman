@@ -5,6 +5,7 @@
 
 [node name="CardDisplay" type="PanelContainer" unique_id=655306505 node_paths=PackedStringArray("cost_label", "name_label", "art_texture_rect", "explanation_label", "attack_label", "block_label")]
 custom_minimum_size = Vector2(200, 300)
+offset_transform_enabled = true
 script = ExtResource("1_biy6k")
 cost_label = NodePath("MarginContainerCost/CardCost")
 name_label = NodePath("VBoxContainer/MarginContainerName/CardName")

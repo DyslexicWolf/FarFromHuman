@@ -12,22 +12,24 @@ signal dropped_on_target(target: Enemy)
 @export var explanation_label: RichTextLabel
 @export var attack_label: RichTextLabel
 @export var block_label: RichTextLabel
-
 @export_flags_3d_physics var target_collision_mask: int = 1
 
 var card_resource: CardResource
 var is_dragging: bool = false
+var base_z_index: int = 0
+var active_tween: Tween
+var active_offset_tween: Tween
 
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
-
-
-func _process(_delta: float) -> void:
-	if is_dragging:
-		global_position = get_global_mouse_position() - size / 2.0
+	# offset_transform_* (Godot 4.7+) is a visual-only transform layered on
+	# top of the real one - it doesn't move the hit area used for hover/
+	# click detection, which is what stops the hover flicker.
+	offset_transform_enabled = true
+	offset_transform_visual_only = true
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -62,7 +64,6 @@ func on_mouse_exited() -> void:
 func start_drag() -> void:
 	is_dragging = true
 	z_index = 200
-	rotation = 0.0
 	drag_started.emit()
 
 

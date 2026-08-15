@@ -21,6 +21,7 @@ var hand_pile: Array[CardResource] = []
 var discard_pile: Array[CardResource] = []
 var player_hand: PlayerHand
 var end_turn_button: Button
+var player_energy: PlayerEnergy
 
 
 func _ready() -> void:
@@ -32,8 +33,11 @@ func _ready() -> void:
 
 	player_hand = get_node("/root/PlayerUI/CombatUIState/PlayerHand")
 	end_turn_button = get_node("/root/PlayerUI/CombatUIState/EndTurnButton")
+	player_energy = get_node("/root/PlayerUI/CombatUIState/PlayerEnergy")
+
 	player_hand.setup(self)
 	end_turn_button.pressed.connect(on_end_turn_pressed)
+	energy_changed.connect(player_energy.on_player_energy_changed)
 	build_deck_from_inventory()
 	deck_pile.shuffle()
 	start_player_turn()

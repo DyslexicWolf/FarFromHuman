@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://crp0kpixatl78"]
+
+[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay.tscn" id="1_ua20r"]
+
+[node name="PlayerDeck" type="PanelContainer" unique_id=1680035419]
+
+[node name="TempBackground" type="Panel" parent="." unique_id=608279282]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=921395301]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Player Deck"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardDisplay" parent="." unique_id=655306505 instance=ExtResource("1_ua20r")]
+visible = false
+layout_mode = 2
