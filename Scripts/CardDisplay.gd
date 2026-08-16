@@ -25,9 +25,6 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
-	# offset_transform_* (Godot 4.7+) is a visual-only transform layered on
-	# top of the real one - it doesn't move the hit area used for hover/
-	# click detection, which is what stops the hover flicker.
 	offset_transform_enabled = true
 	offset_transform_visual_only = true
 
@@ -49,6 +46,7 @@ func setup(resource: CardResource) -> void:
 	block_label.text = str(resource.block_amount)
 	explanation_label.text = resource.explanation
 	art_texture_rect.texture = resource.card_texture
+	size = custom_minimum_size
 
 
 func on_mouse_entered() -> void:

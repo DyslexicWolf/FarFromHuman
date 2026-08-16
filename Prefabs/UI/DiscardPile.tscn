@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bh2c1rs01aflc"]
+
+[node name="DiscardPile" type="PanelContainer" unique_id=2084936583]
+
+[node name="TempBackground" type="Panel" parent="." unique_id=1763720104]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1091234045]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Discard Pile"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

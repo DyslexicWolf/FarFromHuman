@@ -2,7 +2,8 @@ class_name CombatManager
 extends Node
 
 signal energy_changed(current: int, max: int)
-signal hand_changed
+signal played_card(played_card: CardResource)
+signal received_new_hand()
 signal turn_changed(new_state: CombatState)
 
 enum CombatState {
@@ -71,7 +72,7 @@ func draw_up_to_hand_size() -> void:
 				break
 			reshuffle_discard_into_deck()
 		hand_pile.append(deck_pile.pop_back())
-	hand_changed.emit()
+	received_new_hand.emit()
 
 
 func reshuffle_discard_into_deck() -> void:
@@ -96,7 +97,7 @@ func play_card(card: CardResource, target: Enemy) -> bool:
 	discard_pile.append(card)
 	current_energy -= card.energy_cost
 	energy_changed.emit(current_energy, max_energy)
-	hand_changed.emit()
+	played_card.emit(card)
 	#still need to implement damage, block, extra status effects, ...
 	return true
 
@@ -112,7 +113,7 @@ func on_end_turn_pressed() -> void:
 func discard_hand() -> void:
 	discard_pile.append_array(hand_pile)
 	hand_pile.clear()
-	hand_changed.emit()
+	received_new_hand.emit()
 
 
 func start_enemy_turn() -> void:

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b4sv2axuupu3w" path="res://Scripts/PlayerHand.gd" id="2_ielgo"]
 [ext_resource type="Script" uid="uid://dogguqdb1qpt2" path="res://Scripts/PlayerEnergy.gd" id="4_kxsn1"]
 [ext_resource type="PackedScene" uid="uid://crp0kpixatl78" path="res://Prefabs/UI/PlayerDeck.tscn" id="5_4oql3"]
+[ext_resource type="PackedScene" uid="uid://bh2c1rs01aflc" path="res://Prefabs/UI/DiscardPile.tscn" id="6_l85cu"]
 
 [node name="CombatUIState" type="Control" unique_id=1992988984]
 layout_mode = 3
@@ -17,7 +18,7 @@ script = ExtResource("1_iad1y")
 
 [node name="TargetingArrow" parent="." unique_id=543636879 instance=ExtResource("2_5e7ia")]
 
-[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow")]
+[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile", "deck_pile")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,22 +27,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_ielgo")
 targeting_arrow = NodePath("../TargetingArrow")
+discard_pile = NodePath("../DiscardPile")
+deck_pile = NodePath("../PlayerDeck")
 
 [node name="EndTurnButton" type="Button" parent="." unique_id=675044041]
 layout_mode = 0
-offset_left = 1687.0
-offset_top = 943.0
-offset_right = 1869.0
-offset_bottom = 1006.0
+offset_left = 1670.0
+offset_top = 629.0
+offset_right = 1852.0
+offset_bottom = 692.0
 theme_override_font_sizes/font_size = 40
 text = "End Turn"
 
 [node name="PlayerEnergy" type="RichTextLabel" parent="." unique_id=1918702236]
 layout_mode = 0
-offset_left = 279.0
-offset_top = 663.0
-offset_right = 467.0
-offset_bottom = 712.0
+offset_left = 69.0
+offset_top = 643.0
+offset_right = 257.0
+offset_bottom = 692.0
 theme_override_font_sizes/normal_font_size = 35
 text = "Energy: 3/3"
 fit_content = true
@@ -54,3 +57,10 @@ offset_left = 60.0
 offset_top = 718.0
 offset_right = 260.0
 offset_bottom = 1018.0
+
+[node name="DiscardPile" parent="." unique_id=2084936583 instance=ExtResource("6_l85cu")]
+layout_mode = 0
+offset_left = 1659.0
+offset_top = 719.0
+offset_right = 1859.0
+offset_bottom = 1019.0
