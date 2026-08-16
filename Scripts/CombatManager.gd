@@ -23,6 +23,7 @@ var discard_pile: Array[CardResource] = []
 var player_hand: PlayerHand
 var end_turn_button: Button
 var player_energy: PlayerEnergy
+var enemies: Array[Enemy] = []
 
 
 func _ready() -> void:
@@ -31,6 +32,11 @@ func _ready() -> void:
 			child.transitioned.emit(child, "CombatUIState")
 			break
 	PlayerUI.in_combat = true
+
+	for child in get_children():
+		if child is Enemy:
+			child.died.connect(on_enemy_death)
+			enemies.append(child)
 
 	player_hand = get_node("/root/PlayerUI/CombatUIState/PlayerHand")
 	end_turn_button = get_node("/root/PlayerUI/CombatUIState/EndTurnButton")
@@ -130,8 +136,16 @@ func start_enemy_turn() -> void:
 
 
 func end_combat() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	for child: State in PlayerUI.get_children():
 		if child.visible == true:
 			child.transitioned.emit(child, "IdleUIState")
 			break
 	PlayerUI.in_combat = false
+
+
+func on_enemy_death(enemy: Enemy) -> void:
+	enemies.erase(enemy)
+	if enemies.size() == 0:
+		end_combat()
+	print("Combat won.")

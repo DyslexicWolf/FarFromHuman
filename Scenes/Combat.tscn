@@ -21,6 +21,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.853379, 1.1484601, 2.3703
 
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("3_jr68y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5495653, 1, 1.7327299)
-current_block = 0
-current_weakness = 0
-current_strength = 0

@@ -6,6 +6,7 @@ signal current_health_changed(value: int)
 signal current_block_changed(value: int)
 signal current_weakness_changed(value: int)
 signal current_strength_changed(value: int)
+signal died(entity: Entity)
 
 @export var entity_name: String
 
@@ -23,6 +24,8 @@ var current_health: int:
 	set(value):
 		current_health = clamp(value, -1000, max_health)
 		current_health_changed.emit(current_health)
+		if current_health <= 0:
+			die()
 	get:
 		return current_health
 
@@ -46,6 +49,11 @@ var current_health: int:
 		current_strength_changed.emit(current_strength)
 	get:
 		return current_strength
+
+
+func die() -> void:
+	died.emit(self)
+	queue_free()
 
 
 func take_damage(damage_amount: int) -> void:
