@@ -10,7 +10,10 @@
 albedo_color = Color(0.20784314, 0.8392157, 0.2784314, 1)
 
 [node name="Player" type="CharacterBody3D" unique_id=457108580]
+collision_mask = 0
 script = ExtResource("1_um8lo")
+entity_name = "Player"
+max_health = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1196226304]
 shape = SubResource("CapsuleShape3D_et8qu")

@@ -13,6 +13,8 @@ albedo_color = Color(0.7137255, 0.16078432, 0.1254902, 1)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_8k53p")
+entity_name = "Enemy"
+max_health = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=951904312]
 shape = SubResource("BoxShape3D_ggh84")

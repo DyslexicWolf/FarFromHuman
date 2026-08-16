@@ -13,7 +13,7 @@ art_texture_rect = NodePath("VBoxContainer/MarginContainerArt/CardArt")
 explanation_label = NodePath("VBoxContainer/MarginContainerExplanation/CardExplanation")
 attack_label = NodePath("MarginContainerAttackstat/CardAttackstat")
 block_label = NodePath("MarginContainerBlockstat/CardBlockstat")
-target_collision_mask = 4
+target_collision_mask = 5
 
 [node name="MarginContainerCost" type="MarginContainer" parent="." unique_id=1370128118]
 custom_minimum_size = Vector2(25, 0)

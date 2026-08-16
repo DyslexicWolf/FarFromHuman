@@ -86,7 +86,7 @@ func can_play_card(card: CardResource) -> bool:
 
 
 ##ATTEMPTS to play a card against a target. Returns true if it was played.
-func play_card(card: CardResource, target: Enemy) -> bool:
+func play_card(card: CardResource, target: Entity) -> bool:
 	if not can_play_card(card):
 		return false
 	var idx := hand_pile.find(card)
@@ -98,6 +98,10 @@ func play_card(card: CardResource, target: Enemy) -> bool:
 	current_energy -= card.energy_cost
 	energy_changed.emit(current_energy, max_energy)
 	played_card.emit(card)
+	if target is Enemy:
+		target.take_damage(card.attack_damage)
+	elif target is Player:
+		target.receive_block(card.block_amount)
 	#still need to implement damage, block, extra status effects, ...
 	return true
 

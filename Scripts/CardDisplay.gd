@@ -4,7 +4,7 @@ extends Control
 signal mouse_entered_card
 signal mouse_exited_card
 signal drag_started
-signal dropped_on_target(target: Enemy)
+signal targeted_entity(target: Entity)
 
 @export var cost_label: RichTextLabel
 @export var name_label: RichTextLabel
@@ -12,7 +12,7 @@ signal dropped_on_target(target: Enemy)
 @export var explanation_label: RichTextLabel
 @export var attack_label: RichTextLabel
 @export var block_label: RichTextLabel
-@export_flags_3d_physics var target_collision_mask: int = 1
+@export_flags_3d_physics var target_collision_mask: int
 
 var card_resource: CardResource
 var is_dragging: bool = false
@@ -67,10 +67,10 @@ func start_drag() -> void:
 
 func end_drag() -> void:
 	is_dragging = false
-	dropped_on_target.emit(find_target_under_mouse())
+	targeted_entity.emit(find_target_under_mouse())
 
 
-func find_target_under_mouse() -> Enemy:
+func find_target_under_mouse() -> Entity:
 	var camera := get_viewport().get_camera_3d()
 	if camera == null:
 		return null
@@ -81,6 +81,6 @@ func find_target_under_mouse() -> Enemy:
 	query.collision_mask = target_collision_mask
 	var result := get_viewport().world_3d.direct_space_state.intersect_ray(query)
 	var collider: Object = result.get("collider")
-	if collider is Enemy:
+	if collider is Entity:
 		return collider
 	return null

@@ -50,7 +50,7 @@ func refresh_hand() -> void:
 		card_display.mouse_entered_card.connect(on_card_hovered.bind(card_display))
 		card_display.mouse_exited_card.connect(on_card_unhovered.bind(card_display))
 		card_display.drag_started.connect(on_card_drag_started.bind(card_display))
-		card_display.dropped_on_target.connect(on_card_dropped.bind(card_display))
+		card_display.targeted_entity.connect(on_targeted_entity.bind(card_display))
 		card_display.visible = true
 		card_nodes.append(card_display)
 	layout_hand(true)
@@ -109,7 +109,7 @@ func tween_to_hand(
 	pos: Vector2,
 	rot: float,
 	scaling: float,
-	from_deck: bool = false,
+	from_deck: bool,
 ) -> void:
 	if card_display.active_tween:
 		card_display.active_tween.kill()
@@ -215,7 +215,7 @@ func on_card_drag_started(card_display: CardDisplay) -> void:
 		targeting_arrow.start(card_display.global_position + card_display.size / 2.0)
 
 
-func on_card_dropped(target: Enemy, card_display: CardDisplay) -> void:
+func on_targeted_entity(target: Entity, card_display: CardDisplay) -> void:
 	dragging_card = null
 	if targeting_arrow:
 		targeting_arrow.stop()
