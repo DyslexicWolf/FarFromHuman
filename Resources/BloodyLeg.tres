@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://b0wwqd0pqcsw5"]
 
-[ext_resource type="Texture2D" uid="uid://dq5uuq6m1medp" path="res://Textures/TEX_BloodyLeg.png" id="1_srh8t"]
+[ext_resource type="Texture2D" uid="uid://dq5uuq6m1medp" path="res://Textures/T_BloodyLeg.png" id="1_srh8t"]
 [ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_0j4f5"]
 
 [resource]

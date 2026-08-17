@@ -1,5 +1,5 @@
 class_name CardDisplay
-extends Control
+extends PanelContainer
 
 signal mouse_entered_card
 signal mouse_exited_card

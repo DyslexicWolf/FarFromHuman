@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq5uuq6m1medp"
-path="res://.godot/imported/TEX_BloodyLeg.png-fde9630e7799ed3d5e4d7e2a9298ce99.ctex"
+uid="uid://don28qd0sggn6"
+path="res://.godot/imported/T_CardBackground.png-5790aa84f865ff7ae5ca029ab7419549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEX_BloodyLeg.png"
-dest_files=["res://.godot/imported/TEX_BloodyLeg.png-fde9630e7799ed3d5e4d7e2a9298ce99.ctex"]
+source_file="res://Textures/T_CardBackground.png"
+dest_files=["res://.godot/imported/T_CardBackground.png-5790aa84f865ff7ae5ca029ab7419549.ctex"]
 
 [params]
 

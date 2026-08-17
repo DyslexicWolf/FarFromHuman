@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eu54hgdvkctn"
-path="res://.godot/imported/TEX_NormalLeg.png-93287b9e76ed2a07e16c1a51ec7b6289.ctex"
+uid="uid://cnqs56loncpvo"
+path="res://.godot/imported/T_CardBackgroundBlood.png-5844e81fc6dcb59cd3912dfd6e3faced.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TEX_NormalLeg.png"
-dest_files=["res://.godot/imported/TEX_NormalLeg.png-93287b9e76ed2a07e16c1a51ec7b6289.ctex"]
+source_file="res://Textures/T_CardBackgroundBlood.png"
+dest_files=["res://.godot/imported/T_CardBackgroundBlood.png-5844e81fc6dcb59cd3912dfd6e3faced.ctex"]
 
 [params]
 

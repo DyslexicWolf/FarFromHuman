@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7fntpjepnvc8"
-path="res://.godot/imported/TempFrame.png-b183c2dcbae8dfd3bd853e68a1fa3272.ctex"
+uid="uid://bkd5ecqbp0xju"
+path="res://.godot/imported/T_NormalArm.png-af0d691945c57095e571635d9e2189a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TempFrame.png"
-dest_files=["res://.godot/imported/TempFrame.png-b183c2dcbae8dfd3bd853e68a1fa3272.ctex"]
+source_file="res://Textures/T_NormalArm.png"
+dest_files=["res://.godot/imported/T_NormalArm.png-af0d691945c57095e571635d9e2189a6.ctex"]
 
 [params]
 
