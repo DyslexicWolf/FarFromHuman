@@ -21,3 +21,5 @@ shape = SubResource("CapsuleShape3D_et8qu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=745981496]
 mesh = SubResource("CapsuleMesh_et8qu")
 surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
+
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]

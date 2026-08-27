@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chqaeg0c4s02u" path="res://Prefabs/UI/PlayerUI.tscn" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="2_gl6un"]
+[ext_resource type="PackedScene" uid="uid://c2dmduqhgkh61" path="res://Prefabs/ExampleNPC.tscn" id="3_j5yw3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_et8qu"]
 
@@ -12,9 +13,9 @@
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("2_gl6un")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="ExampleNpc" parent="." unique_id=1413407034 instance=ExtResource("3_j5yw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6157722, 1, -2.928289)
+
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1893866563]
 transform = Transform3D(7.4, 0, 0, 0, 1, 0, 0, 0, 6.8, 0, 0, 0)
 mesh = SubResource("PlaneMesh_et8qu")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1104204757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9143765, 2.990221)

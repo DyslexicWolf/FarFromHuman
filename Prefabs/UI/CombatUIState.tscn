@@ -7,19 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://crp0kpixatl78" path="res://Prefabs/UI/PlayerDeck.tscn" id="5_4oql3"]
 [ext_resource type="PackedScene" uid="uid://bh2c1rs01aflc" path="res://Prefabs/UI/DiscardPile.tscn" id="6_l85cu"]
 
-[node name="CombatUIState" type="Control" unique_id=1992988984]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CombatUIState" type="CanvasLayer" unique_id=761821837]
 script = ExtResource("1_iad1y")
 
 [node name="TargetingArrow" parent="." unique_id=543636879 instance=ExtResource("2_5e7ia")]
 
 [node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile", "deck_pile")]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,7 +25,6 @@ discard_pile = NodePath("../DiscardPile")
 deck_pile = NodePath("../PlayerDeck")
 
 [node name="EndTurnButton" type="Button" parent="." unique_id=675044041]
-layout_mode = 0
 offset_left = 1670.0
 offset_top = 629.0
 offset_right = 1852.0
@@ -40,7 +33,6 @@ theme_override_font_sizes/font_size = 40
 text = "End Turn"
 
 [node name="PlayerEnergy" type="RichTextLabel" parent="." unique_id=1918702236]
-layout_mode = 0
 offset_left = 69.0
 offset_top = 643.0
 offset_right = 257.0
@@ -52,14 +44,12 @@ autowrap_mode = 0
 script = ExtResource("4_kxsn1")
 
 [node name="PlayerDeck" parent="." unique_id=1680035419 instance=ExtResource("5_4oql3")]
-layout_mode = 0
 offset_left = 60.0
 offset_top = 718.0
 offset_right = 260.0
 offset_bottom = 1018.0
 
 [node name="DiscardPile" parent="." unique_id=2084936583 instance=ExtResource("6_l85cu")]
-layout_mode = 0
 offset_left = 1659.0
 offset_top = 719.0
 offset_right = 1859.0

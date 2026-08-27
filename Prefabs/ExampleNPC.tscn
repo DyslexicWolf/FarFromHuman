@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2dmduqhgkh61"]
+
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="1_gv3p3"]
+[ext_resource type="Script" uid="uid://2g13yml4shd8" path="res://Scripts/NPC.gd" id="1_mvyk2"]
+[ext_resource type="Resource" uid="uid://do1wj2ni14hiv" path="res://Dialogue/TestDialogue.dialogue" id="2_rbn3l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_et8qu"]
+size = Vector3(4.1228027, 1.8369141, 4.423828)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_et8qu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggh84"]
+albedo_color = Color(0.29411766, 0, 1, 1)
+
+[node name="ExampleNpc" type="Node3D" unique_id=1413407034]
+script = ExtResource("1_mvyk2")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=1415905265]
+collision_layer = 0
+script = ExtResource("1_gv3p3")
+dialogue_resource = ExtResource("2_rbn3l")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1327418700]
+shape = SubResource("BoxShape3D_et8qu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=123040029]
+mesh = SubResource("CapsuleMesh_et8qu")
+surface_material_override/0 = SubResource("StandardMaterial3D_ggh84")

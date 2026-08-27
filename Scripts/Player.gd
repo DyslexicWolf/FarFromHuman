@@ -1,11 +1,80 @@
 class_name Player
 extends Entity
 
+@export var acceleration: float = 2.0
+@export var drag: float = 500.0
+@export var max_movement_speed: float = 10.0
+@export var mouse_sensitivity: float = 0.003
+@export var min_pitch: float = -80.0
+@export var max_pitch: float = 80.0
+
+@onready var player_camera: Camera3D = $PlayerCamera
+
+var input_vector: Vector2
+
 
 func _ready() -> void:
 	current_health = max_health
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+func _physics_process(_delta: float) -> void:
+	get_input()
+	#change_animation()
+	move_and_slide()
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		get_tree().change_scene_to_file("res://Scenes/Combat.tscn")
+
+	if event.is_action_pressed("ui_cancel"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+
+		player_camera.rotate_x(-event.relative.y * mouse_sensitivity)
+		player_camera.rotation.x = clamp(
+			player_camera.rotation.x,
+			deg_to_rad(min_pitch),
+			deg_to_rad(max_pitch),
+		)
+
+
+func get_input() -> void:
+	input_vector = Input.get_vector("MoveLeft", "MoveRight", "MoveForward", "MoveBackward")
+
+	var forward := -global_basis.z
+	var right := global_basis.x
+	forward.y = 0
+	right.y = 0
+	forward = forward.normalized()
+	right = right.normalized()
+
+	var desired_input_direction := forward * -input_vector.y + right * input_vector.x
+
+	if input_vector.length() > 0:
+		velocity.x = move_toward(
+			velocity.x,
+			desired_input_direction.x * max_movement_speed,
+			acceleration,
+		)
+		velocity.z = move_toward(
+			velocity.z,
+			desired_input_direction.z * max_movement_speed,
+			acceleration,
+		)
+	else:
+		velocity.x = move_toward(velocity.x, 0, drag)
+		velocity.z = move_toward(velocity.z, 0, drag)
+
+##Function to be implemented later when we have animations.
+#func change_animation() -> void:
+#if (global_position - get_global_mouse_position()).x > 0:
+#player_pivot.scale.x = -1
+#else:
+#player_pivot.scale.x = 1

@@ -1,5 +1,5 @@
 class_name Entity
-extends Node
+extends CharacterBody3D
 
 signal max_health_changed(value: int)
 signal current_health_changed(value: int)
