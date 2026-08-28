@@ -1,17 +1,10 @@
 [gd_scene format=3 uid="uid://fdya7vaypamp"]
 
-[ext_resource type="PackedScene" uid="uid://chqaeg0c4s02u" path="res://Prefabs/UI/PlayerUI.tscn" id="1_iukft"]
-[ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://c2dmduqhgkh61" path="res://Prefabs/ExampleNPC.tscn" id="3_j5yw3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_et8qu"]
 
 [node name="Game" type="Node3D" unique_id=1810354463]
-
-[node name="PlayerUI" parent="." unique_id=1911912189 instance=ExtResource("1_iukft")]
-
-[node name="Player" parent="." unique_id=457108580 instance=ExtResource("2_gl6un")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="ExampleNpc" parent="." unique_id=1413407034 instance=ExtResource("3_j5yw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6157722, 1, -2.928289)

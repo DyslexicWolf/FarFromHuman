@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxyvl0g7iu8d7"]
+
+[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay.tscn" id="1_bfrtq"]
+
+[node name="CardDisplay3D" type="MeshInstance3D" unique_id=1338296729]
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1419876295]
+transparent_bg = true
+size = Vector2i(225, 300)
+render_target_update_mode = 3
+
+[node name="CardDisplay" parent="SubViewport" unique_id=655306505 instance=ExtResource("1_bfrtq")]

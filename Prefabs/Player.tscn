@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qq214t11g7t"]
 
 [ext_resource type="Script" uid="uid://ccllbttajf6n0" path="res://Scripts/Player.gd" id="1_um8lo"]
+[ext_resource type="PackedScene" uid="uid://cxyvl0g7iu8d7" path="res://Prefabs/CardDisplay3D.tscn" id="2_x3d5u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_et8qu"]
 
@@ -24,3 +25,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74079084, 0)
+
+[node name="CardDisplay3D" parent="." unique_id=1338296729 instance=ExtResource("2_x3d5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1376074, -1.8202684)
