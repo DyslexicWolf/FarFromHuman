@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg08wd2xx8lhx"]
 
-[ext_resource type="Script" uid="uid://cli5rjq4p2t06" path="res://Scripts/StateMachine/CharacterSheetState.gd" id="1_40j1b"]
+[ext_resource type="Script" uid="uid://cli5rjq4p2t06" path="res://Scripts/StateMachine/InventoryState.gd" id="1_40j1b"]
 [ext_resource type="PackedScene" uid="uid://chu8dabspw48v" path="res://Prefabs/UI/BodyBox.tscn" id="1_g0sds"]
 [ext_resource type="PackedScene" uid="uid://cpqlqd8iprr3k" path="res://Prefabs/UI/InventoryBox.tscn" id="2_16te6"]
 [ext_resource type="Resource" uid="uid://b6vwktjdf1tko" path="res://Resources/ExampleCard.tres" id="2_e6mpe"]
@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="6_e5shn"]
 [ext_resource type="PackedScene" uid="uid://b5dgysfbqkqbf" path="res://Prefabs/UI/CardTooltip.tscn" id="8_37yuc"]
 
-[node name="CharacterSheetState" type="CanvasLayer" unique_id=1402076577]
+[node name="InventoryState" type="CanvasLayer" unique_id=1402076577]
 script = ExtResource("1_40j1b")
 
 [node name="Panel" type="Panel" parent="." unique_id=1277464670]

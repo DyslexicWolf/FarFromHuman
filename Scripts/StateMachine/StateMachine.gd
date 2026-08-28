@@ -1,6 +1,8 @@
 class_name StateMachine
 extends Node
 
+signal ui_changed(new_ui_state: State)
+
 @export var initial_state: State
 
 var current_state: State
@@ -43,3 +45,4 @@ func on_child_transitioned(state: State, new_state_name: String) -> void:
 	new_state._enter()
 
 	current_state = new_state
+	ui_changed.emit(current_state)

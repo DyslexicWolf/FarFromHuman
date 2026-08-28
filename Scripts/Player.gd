@@ -1,4 +1,3 @@
-class_name Player
 extends Entity
 
 @export var acceleration: float = 2.0
@@ -11,24 +10,25 @@ extends Entity
 @onready var player_camera: Camera3D = $PlayerCamera
 
 var input_vector: Vector2
+var in_ui_idle_state: bool
 
 
 func _ready() -> void:
 	current_health = max_health
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	PlayerUI.ui_changed.connect(on_ui_changed)
 
 
 func _physics_process(_delta: float) -> void:
 	get_input()
-	#change_animation()
 	move_and_slide()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Interact"):
+	if event.is_action_pressed("CombatTest"):
 		get_tree().change_scene_to_file("res://Scenes/Combat.tscn")
 
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("UICancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
@@ -72,9 +72,9 @@ func get_input() -> void:
 		velocity.x = move_toward(velocity.x, 0, drag)
 		velocity.z = move_toward(velocity.z, 0, drag)
 
-##Function to be implemented later when we have animations.
-#func change_animation() -> void:
-#if (global_position - get_global_mouse_position()).x > 0:
-#player_pivot.scale.x = -1
-#else:
-#player_pivot.scale.x = 1
+
+func on_ui_changed(new_ui_state: State) -> void:
+	if new_ui_state.name == "IdleUIState":
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://nm3e0n2bfm6w" path="res://Scripts/CombatManager.gd" id="1_5y3t8"]
 [ext_resource type="PackedScene" uid="uid://dlptd6w0vca70" path="res://Prefabs/Enemy.tscn" id="2_jr68y"]
-[ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="3_jr68y"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_et8qu"]
 
@@ -18,6 +17,3 @@ transform = Transform3D(0.97218734, 0, 0.23420468, 0, 1, 0, -0.23420468, 0, 0.97
 
 [node name="Enemy" parent="." unique_id=1323056336 instance=ExtResource("2_jr68y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.853379, 1.1484601, 2.3703976)
-
-[node name="Player" parent="." unique_id=457108580 instance=ExtResource("3_jr68y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5495653, 1, 1.7327299)

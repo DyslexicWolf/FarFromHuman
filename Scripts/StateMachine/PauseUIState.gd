@@ -10,9 +10,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("PauseGame") and can_change_state:
-		transitioned.emit(self, "IdleUIState")
+		if PlayerUI.in_combat:
+			transitioned.emit(self, "CombatUIState")
+		else:
+			transitioned.emit(self, "IdleUIState")
 	elif event.is_action_pressed("CloseUI") and can_change_state:
-		transitioned.emit(self, "IdleUIState")
+		if PlayerUI.in_combat:
+			transitioned.emit(self, "CombatUIState")
+		else:
+			transitioned.emit(self, "IdleUIState")
 
 
 func _enter() -> void:
