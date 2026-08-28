@@ -1,8 +1,6 @@
 class_name InventoryBox
 extends Control
 
-@onready var card_texture: TextureRect = $CardTexture
-
 var card_resource: CardResource:
 	set(value):
 		card_resource = value
@@ -22,6 +20,7 @@ var inventory_boxes: Array[InventoryBox]
 @export var body_parts_panel: Panel
 @export var inventory_panel: Panel
 @export var card_tooltip: PanelContainer
+@export var card_texture: TextureRect
 
 
 func _ready() -> void:
@@ -30,7 +29,7 @@ func _ready() -> void:
 
 
 func _on_card_changed() -> void:
-	if not card_resource:
+	if card_resource == null:
 		card_texture.texture = null
 		return
 

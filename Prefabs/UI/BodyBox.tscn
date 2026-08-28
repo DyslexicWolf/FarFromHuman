@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2s30j30blwh2" path="res://Scripts/BodyPartBox.gd" id="1_f8104"]
 [ext_resource type="Texture2D" uid="uid://b7fntpjepnvc8" path="res://Textures/T_TempFrame.png" id="2_ebm3l"]
 
-[node name="BodyPartBox" type="Control" unique_id=2102669481]
+[node name="BodyPartBox" type="Control" unique_id=2102669481 node_paths=PackedStringArray("card_texture")]
 custom_minimum_size = Vector2(135, 135)
 custom_maximum_size = Vector2(135, 135)
 layout_mode = 3
@@ -11,6 +11,7 @@ anchors_preset = 0
 script = ExtResource("1_f8104")
 bodypart_box_type = null
 box_index = null
+card_texture = NodePath("CardTexture")
 
 [node name="CardTexture" type="TextureRect" parent="." unique_id=1251167160]
 layout_mode = 0

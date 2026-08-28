@@ -24,6 +24,9 @@ var player_hand: PlayerHand
 var end_turn_button: Button
 var player_energy: PlayerEnergy
 var enemies: Array[Enemy] = []
+var lootable_card_array: Array[CardResource]
+
+@onready var combat_rewards: Control = $CombatRewards
 
 
 func _ready() -> void:
@@ -144,8 +147,15 @@ func end_combat() -> void:
 	PlayerUI.in_combat = false
 
 
+func show_combat_rewards() -> void:
+	var custom_item_list: CustomItemList = combat_rewards.get_child(0)
+	custom_item_list.generate_boxes(lootable_card_array)
+	combat_rewards.visible = true
+
+
 func on_enemy_death(enemy: Enemy) -> void:
+	lootable_card_array.append_array(enemy.lootable_cards)
 	enemies.erase(enemy)
 	if enemies.size() == 0:
-		end_combat()
-	print("Combat won.")
+		show_combat_rewards()
+		print("Combat won.")

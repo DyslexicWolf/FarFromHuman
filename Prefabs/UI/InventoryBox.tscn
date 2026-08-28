@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://bx3c1uknfkpcc" path="res://Scripts/InventoryBox.gd" id="1_kn3ux"]
 [ext_resource type="Texture2D" uid="uid://b7fntpjepnvc8" path="res://Textures/T_TempFrame.png" id="2_h4uvq"]
 
-[node name="InventoryBox" type="Control" unique_id=1795008268]
+[node name="InventoryBox" type="Control" unique_id=1795008268 node_paths=PackedStringArray("card_texture")]
 custom_minimum_size = Vector2(135, 135)
 custom_maximum_size = Vector2(135, 135)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_kn3ux")
+card_texture = NodePath("CardTexture")
 
 [node name="CardTexture" type="TextureRect" parent="." unique_id=58173640]
 layout_mode = 0
