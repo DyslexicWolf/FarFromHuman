@@ -8,7 +8,7 @@ extends Entity
 @export var run_speed_multiplier: float = 1.4
 @export var falling_acceleration: float = 1.2
 @export var max_falling_speed: float = 3.0
-var gravity_acceleration_factor: float = 0.0
+
 @export_group("Camera")
 @export var mouse_sensitivity: float = 0.002
 @export var min_pitch: float = -80.0
@@ -20,9 +20,9 @@ var gravity_acceleration_factor: float = 0.0
 @export var bob_horizontal_amplitude: float = 0.05
 @export var bob_smoothing: float = 8.0
 
+var gravity_acceleration_factor: float = 0.0
 var input_vector: Vector2
 var gravity_factor: Vector3
-
 var in_ui_idle_state: bool = true
 var is_running: bool = false
 var camera_base_position: Vector3
@@ -103,14 +103,16 @@ func get_input(delta: float) -> void:
 			1,
 		)
 		if velocity.y <= 0:
-			gravity_factor = get_gravity() #* 0.1 * dress_slowfall_multiplier
+			gravity_factor = get_gravity()
 		else:
 			gravity_factor = get_gravity() * 0.5
-		velocity.y += gravity_factor.clamp(-Vector3(0, 1, 0).normalized() * max_falling_speed, Vector3(0, 1, 0).normalized() * max_falling_speed).y
-	
+		velocity.y += gravity_factor.clamp(
+			-Vector3(0, 1, 0).normalized() * max_falling_speed,
+			Vector3(0, 1, 0).normalized() * max_falling_speed,
+		).y
+
 	elif is_on_floor():
 		gravity_acceleration_factor = 0.0
-
 
 
 func update_head_bobble(delta: float) -> void:
