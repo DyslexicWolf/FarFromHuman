@@ -15,10 +15,10 @@ extends Control
 @export var card_hand_y_offset: float = 175.0
 
 var combat_manager: CombatManager
-var card_nodes: Array[CardDisplay] = []
-var hovered_card: CardDisplay = null
-var dragging_card: CardDisplay = null
-var card_display_scene: CardDisplay
+var card_nodes: Array[CardDisplay2D] = []
+var hovered_card: CardDisplay2D = null
+var dragging_card: CardDisplay2D = null
+var card_display_scene: CardDisplay2D
 
 
 func _ready() -> void:
@@ -105,7 +105,7 @@ func layout_hand(from_deck: bool) -> void:
 
 ##This function makes the cards visually move from the deck to the player's hand.
 func tween_to_hand(
-	card_display: CardDisplay,
+	card_display: CardDisplay2D,
 	pos: Vector2,
 	rot: float,
 	scaling: float,
@@ -134,7 +134,12 @@ func tween_to_hand(
 
 ##Makes a visual offset happen for the cards when hovering them.
 ##This uses the offset_transform so only the visuals get moved, rotated, scaled.
-func tween_card_offset(card_display: CardDisplay, pos: Vector2, rot: float, scaling: float) -> void:
+func tween_card_offset(
+	card_display: CardDisplay2D,
+	pos: Vector2,
+	rot: float,
+	scaling: float,
+) -> void:
 	if card_display.active_offset_tween:
 		card_display.active_offset_tween.kill()
 	var tween := create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(
@@ -150,7 +155,7 @@ func tween_card_offset(card_display: CardDisplay, pos: Vector2, rot: float, scal
 
 
 ##This function makes the card visually move to the discard pile.
-func tween_to_discard(card_display: CardDisplay) -> void:
+func tween_to_discard(card_display: CardDisplay2D) -> void:
 	if card_display.active_tween:
 		card_display.active_tween.kill()
 	if card_display.active_offset_tween:
@@ -183,31 +188,31 @@ func tween_to_discard(card_display: CardDisplay) -> void:
 	tween.chain().tween_callback(card_display.queue_free)
 
 
-func apply_lifted_offset(card_display: CardDisplay) -> void:
+func apply_lifted_offset(card_display: CardDisplay2D) -> void:
 	card_display.z_index = 200 if card_display == dragging_card else 100
 	var scale_value := hover_card_scale / base_card_scale
 	tween_card_offset(card_display, Vector2(0, -hover_raise), -card_display.rotation, scale_value)
 
 
-func clear_lifted_offset(card_display: CardDisplay) -> void:
+func clear_lifted_offset(card_display: CardDisplay2D) -> void:
 	card_display.z_index = card_display.base_z_index
 	tween_card_offset(card_display, Vector2.ZERO, 0.0, 1.0)
 
 
-func on_card_hovered(card_display: CardDisplay) -> void:
+func on_card_hovered(card_display: CardDisplay2D) -> void:
 	if dragging_card != null:
 		return
 	hovered_card = card_display
 	apply_lifted_offset(card_display)
 
 
-func on_card_unhovered(card_display: CardDisplay) -> void:
+func on_card_unhovered(card_display: CardDisplay2D) -> void:
 	if hovered_card == card_display:
 		hovered_card = null
 	clear_lifted_offset(card_display)
 
 
-func on_card_drag_started(card_display: CardDisplay) -> void:
+func on_card_drag_started(card_display: CardDisplay2D) -> void:
 	dragging_card = card_display
 	hovered_card = null
 	apply_lifted_offset(card_display)
@@ -215,7 +220,7 @@ func on_card_drag_started(card_display: CardDisplay) -> void:
 		targeting_arrow.start(card_display.global_position + card_display.size / 2.0)
 
 
-func on_targeted_entity(target: Entity, card_display: CardDisplay) -> void:
+func on_targeted_entity(target: Entity, card_display: CardDisplay2D) -> void:
 	dragging_card = null
 	if targeting_arrow:
 		targeting_arrow.stop()

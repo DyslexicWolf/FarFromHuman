@@ -27,4 +27,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74079084, 0)
 
 [node name="CardDisplay3D" parent="." unique_id=1338296729 instance=ExtResource("2_x3d5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1376074, -1.8202684)
+transform = Transform3D(1, 0, 0, 0, 0.57262325, -0.8198187, 0, 0.8198187, 0.57262325, 0, 0.40893346, -1.1556581)

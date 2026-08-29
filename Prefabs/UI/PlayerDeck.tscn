@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crp0kpixatl78"]
 
-[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay.tscn" id="1_ua20r"]
+[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay2D.tscn" id="1_ua20r"]
 
 [node name="PlayerDeck" type="PanelContainer" unique_id=1680035419]
 

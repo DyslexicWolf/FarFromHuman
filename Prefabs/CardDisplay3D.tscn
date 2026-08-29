@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cxyvl0g7iu8d7"]
 
-[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay.tscn" id="1_bfrtq"]
+[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay2D.tscn" id="1_bfrtq"]
+[ext_resource type="Script" uid="uid://c0s6goeowqe1g" path="res://Scripts/CardDisplay3D.gd" id="1_r8e1w"]
+[ext_resource type="PackedScene" uid="uid://wa4s51esqmmv" path="res://Models/SM_Card3D.fbx" id="3_p4rfa"]
 
-[node name="CardDisplay3D" type="MeshInstance3D" unique_id=1338296729]
+[node name="CardDisplay3D" type="Node3D" unique_id=1127104588]
+script = ExtResource("1_r8e1w")
+
+[node name="SM_Card3D" parent="." unique_id=252538377 instance=ExtResource("3_p4rfa")]
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1419876295]
 transparent_bg = true
 size = Vector2i(225, 300)
 render_target_update_mode = 3
 
-[node name="CardDisplay" parent="SubViewport" unique_id=655306505 instance=ExtResource("1_bfrtq")]
+[node name="CardDisplay2D" parent="SubViewport" unique_id=655306505 instance=ExtResource("1_bfrtq")]

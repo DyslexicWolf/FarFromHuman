@@ -1,4 +1,4 @@
-class_name CardDisplay
+class_name CardDisplay2D
 extends PanelContainer
 
 signal mouse_entered_card

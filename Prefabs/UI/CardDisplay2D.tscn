@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://jms27n0gbn3h"]
 
 [ext_resource type="Texture2D" uid="uid://don28qd0sggn6" path="res://Textures/T_CardBackground.png" id="1_8awvp"]
-[ext_resource type="Script" uid="uid://48payptkkhtr" path="res://Scripts/CardDisplay.gd" id="1_biy6k"]
+[ext_resource type="Script" uid="uid://48payptkkhtr" path="res://Scripts/CardDisplay2D.gd" id="1_biy6k"]
 [ext_resource type="Texture2D" uid="uid://daiinj0p2rp8l" path="res://Textures/icon.svg" id="1_njaq3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et8qu"]
 texture = ExtResource("1_8awvp")
 
-[node name="CardDisplay" type="PanelContainer" unique_id=655306505 node_paths=PackedStringArray("cost_label", "name_label", "art_texture_rect", "explanation_label", "attack_label", "block_label")]
+[node name="CardDisplay2D" type="PanelContainer" unique_id=655306505 node_paths=PackedStringArray("cost_label", "name_label", "art_texture_rect", "explanation_label", "attack_label", "block_label")]
 custom_minimum_size = Vector2(200, 300)
 offset_right = 225.0
 offset_bottom = 300.0

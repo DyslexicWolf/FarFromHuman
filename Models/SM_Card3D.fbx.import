@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wa4s51esqmmv"
-path="res://.godot/imported/SM_3DCard.fbx-f9ff45687105c07e9f8eb72ebacd1f08.scn"
+path="res://.godot/imported/SM_Card3D.fbx-bdd0f00823c5e6560d36bb979556c826.scn"
 
 [deps]
 
-source_file="res://Models/SM_3DCard.fbx"
-dest_files=["res://.godot/imported/SM_3DCard.fbx-f9ff45687105c07e9f8eb72ebacd1f08.scn"]
+source_file="res://Models/SM_Card3D.fbx"
+dest_files=["res://.godot/imported/SM_Card3D.fbx-bdd0f00823c5e6560d36bb979556c826.scn"]
 
 [params]
 
