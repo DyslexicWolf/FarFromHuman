@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dlptd6w0vca70"]
 
 [ext_resource type="Script" uid="uid://cledhmafokotl" path="res://Scripts/Enemy.gd" id="1_8k53p"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_yfbri"]
+[ext_resource type="Resource" uid="uid://b6vwktjdf1tko" path="res://Resources/ExampleCard.tres" id="3_bftkq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ggh84"]
 
@@ -13,6 +15,7 @@ albedo_color = Color(0.7137255, 0.16078432, 0.1254902, 1)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_8k53p")
+lootable_cards = Array[ExtResource("2_yfbri")]([ExtResource("3_bftkq")])
 entity_name = "Enemy"
 max_health = 5
 
