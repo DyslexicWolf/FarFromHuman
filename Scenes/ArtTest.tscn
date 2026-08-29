@@ -4,6 +4,7 @@
 [ext_resource type="Environment" uid="uid://dr7h56vckxq02" path="res://TerrainData/Environment.tres" id="1_ukis8"]
 [ext_resource type="Terrain3DAssets" uid="uid://00cbenhskr7e" path="res://TerrainData/terrain_3d_assets.tres" id="2_vsrlw"]
 [ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Tree.tscn" id="4_wc6fi"]
+[ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
 
@@ -52,3 +53,6 @@ transform = Transform3D(0.44411066, 0, -0.89597195, 0, 1, 0, 0.89597195, 0, 0.44
 
 [node name="Tree3" parent="." unique_id=1062157694 instance=ExtResource("4_wc6fi")]
 transform = Transform3D(-0.4911725, -0.020396717, 0.87082344, -0.027986715, 0.9995792, 0.00762707, -0.87061256, -0.02062528, -0.4915367, 122.11226, 1.861166, 134.76431)
+
+[node name="Player" parent="." unique_id=457108580 instance=ExtResource("5_ukis8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39942, 3.2864642, 125.12516)
