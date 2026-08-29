@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://nm3e0n2bfm6w" path="res://Scripts/CombatManager.gd" id="1_5y3t8"]
 [ext_resource type="PackedScene" uid="uid://dlptd6w0vca70" path="res://Prefabs/Enemy.tscn" id="2_jr68y"]
 [ext_resource type="PackedScene" uid="uid://dr87qrlhbwf15" path="res://Prefabs/UI/CustomItemList.tscn" id="3_jr68y"]
+[ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="4_rq8dt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_et8qu"]
 
@@ -32,3 +33,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Player" parent="." unique_id=457108580 instance=ExtResource("4_rq8dt")]
