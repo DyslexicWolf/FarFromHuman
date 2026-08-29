@@ -9,7 +9,6 @@ custom_maximum_size = Vector2(135, 135)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_f8104")
-bodypart_box_type = null
 box_index = null
 card_texture = NodePath("CardTexture")
 
