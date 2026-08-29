@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cg08wd2xx8lhx" path="res://Prefabs/UI/InventoryState.tscn" id="3_x72b1"]
 [ext_resource type="PackedScene" uid="uid://cd6k1yepaxl7o" path="res://Prefabs/UI/PauseUIState.tscn" id="4_x72b1"]
 [ext_resource type="PackedScene" uid="uid://c27wli07mm8t6" path="res://Prefabs/UI/CombatUIState.tscn" id="5_88yxu"]
-[ext_resource type="PackedScene" uid="uid://cnejya45m3r0l" path="res://Dialogue/DialogueState.tscn" id="6_od4qv"]
+[ext_resource type="PackedScene" uid="uid://bnoj11l3tq76p" path="res://Prefabs/UI/DialogueUIState.tscn" id="6_od4qv"]
 
 [node name="PlayerUI" type="Control" unique_id=1911912189 node_paths=PackedStringArray("initial_state")]
 layout_mode = 3
@@ -28,5 +28,5 @@ visible = false
 [node name="CombatUIState" parent="." unique_id=1992988984 instance=ExtResource("5_88yxu")]
 visible = false
 
-[node name="DialogueState" parent="." unique_id=38036521 instance=ExtResource("6_od4qv")]
+[node name="DialogueUIState" parent="." unique_id=1124182724 instance=ExtResource("6_od4qv")]
 visible = false

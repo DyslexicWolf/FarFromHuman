@@ -35,3 +35,4 @@ collision_mask = 8
 shape = SubResource("SphereShape3D_ggh84")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
+[connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_exited"]
