@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dwqjvmndmol3j"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://dcs7a68do5dgg" path="res://TerrainData/terrain_3d_material.tres" id="1_c0a7e"]
+[ext_resource type="Environment" uid="uid://dr7h56vckxq02" path="res://TerrainData/Environment.tres" id="1_ukis8"]
+[ext_resource type="Terrain3DAssets" uid="uid://00cbenhskr7e" path="res://TerrainData/terrain_3d_assets.tres" id="2_vsrlw"]
+[ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Tree.tscn" id="4_wc6fi"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_u6hvw"]
+density = 0.5539
+albedo = Color(0.34117648, 1, 1, 1)
+emission = Color(0.9577182, 0.9577182, 0.9577181, 1)
+height_falloff = 0.00019698252
+edge_fade = 0.0034970657
+
+[node name="ArtTest" type="Node3D" unique_id=1660056797]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1934148769]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9002478, 0.92748034, 0.8739409, 1)
+light_angular_distance = 2.2
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=454327296]
+environment = ExtResource("1_ukis8")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1831229829]
+navigation_mesh = SubResource("NavigationMesh_ukis8")
+
+[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D" unique_id=391837472]
+data_directory = "res://TerrainData"
+material = ExtResource("1_c0a7e")
+assets = ExtResource("2_vsrlw")
+collision_layer = 2
+collision_mask = 0
+mesh_lods = 4
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=1381029995]
+transform = Transform3D(0.85986125, 0, -0.5105278, 0, 1, 0, 0.5105278, 0, 0.85986125, 137.84181, 19.60107, 195.34433)
+size = Vector3(32.01184, 18.111969, 17.08899)
+shape = 0
+material = SubResource("FogMaterial_u6hvw")
+
+[node name="Tree" parent="." unique_id=2081053351 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.23759478, 0, 0.9713644, 0, 1, 0, -0.9713644, 0, 0.23759478, 122.65802, 0.8600979, 120.78951)
+
+[node name="Tree2" parent="." unique_id=1082875003 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.44411066, 0, -0.89597195, 0, 1, 0, 0.89597195, 0, 0.44411066, 131.35583, 0.13162327, 105.36886)
+
+[node name="Tree3" parent="." unique_id=1062157694 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(-0.4911725, -0.020396717, 0.87082344, -0.027986715, 0.9995792, 0.00762707, -0.87061256, -0.02062528, -0.4915367, 122.11226, 1.861166, 134.76431)
