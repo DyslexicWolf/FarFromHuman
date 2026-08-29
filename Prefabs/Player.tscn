@@ -9,6 +9,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ynan"]
 albedo_color = Color(0.20784314, 0.8392157, 0.2784314, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ggh84"]
+radius = 0.9646094
+
 [node name="Player" type="CharacterBody3D" unique_id=457108580]
 collision_mask = 2
 script = ExtResource("1_um8lo")
@@ -24,3 +27,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
 
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875823, -0.23482281)
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=300037680]
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1943285806]
+shape = SubResource("SphereShape3D_ggh84")
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]

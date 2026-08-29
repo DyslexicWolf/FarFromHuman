@@ -143,3 +143,9 @@ func on_ui_changed(new_ui_state: State) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+
+func _on_detection_area_entered(area: Area3D) -> void:
+	if area is DialogueActionable3D:
+		print("ig this works?")
