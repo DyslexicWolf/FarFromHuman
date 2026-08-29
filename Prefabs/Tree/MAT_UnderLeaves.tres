@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gu2c0hr5v7ym"]
+
+[ext_resource type="Texture2D" uid="uid://e4tqw7617fw5" path="res://Textures/Nature/T_UndersideLeaves.png" id="1_mcvxd"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_mcvxd")
+texture_filter = 2
