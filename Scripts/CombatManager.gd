@@ -25,8 +25,12 @@ var end_turn_button: Button
 var player_energy: PlayerEnergy
 var enemies: Array[Enemy] = []
 var lootable_card_array: Array[CardResource]
+var reward_claimed := false
 
-@onready var combat_rewards: Control = $CombatRewards
+@onready var combat_rewards: CanvasLayer = $CombatRewards
+@onready var custom_item_list: CustomItemList = (
+	$CombatRewards/CenterContainer/CustomItemList
+)
 
 
 func _ready() -> void:
@@ -48,6 +52,7 @@ func _ready() -> void:
 	player_hand.setup(self)
 	end_turn_button.pressed.connect(on_end_turn_pressed)
 	energy_changed.connect(player_energy.on_player_energy_changed)
+	custom_item_list.reward_selected.connect(on_reward_selected)
 	build_deck_from_inventory()
 	deck_pile.shuffle()
 	start_player_turn()
@@ -148,9 +153,29 @@ func end_combat() -> void:
 
 
 func show_combat_rewards() -> void:
-	var custom_item_list: CustomItemList = combat_rewards.get_child(0)
 	custom_item_list.generate_boxes(lootable_card_array)
 	combat_rewards.visible = true
+
+
+func on_reward_selected(card: CardResource) -> void:
+	if reward_claimed:
+		return
+
+	var inventory_panel := get_node_or_null(
+		"/root/PlayerUI/InventoryState/Panel/InventoryPanel"
+	)
+	if inventory_panel == null:
+		push_error("Could not find the player's inventory panel.")
+		return
+
+	for child in inventory_panel.get_children():
+		if child is InventoryBox and child.card_resource == null:
+			reward_claimed = true
+			child.card_resource = card
+			end_combat()
+			return
+
+	push_warning("The reward was not collected because the inventory is full.")
 
 
 func on_enemy_death(enemy: Enemy) -> void:

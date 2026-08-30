@@ -17,8 +17,20 @@ script = ExtResource("1_5y3t8")
 [node name="Enemy" parent="." unique_id=1323056336 instance=ExtResource("2_jr68y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1986997, 1.1484601, -5.2867475)
 
-[node name="CombatRewards" type="Control" parent="." unique_id=408767344]
+[node name="CombatRewards" type="CanvasLayer" parent="." unique_id=408767344]
 visible = false
+layer = 10
+
+[node name="RewardBackground" type="ColorRect" parent="CombatRewards"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+
+[node name="CenterContainer" type="CenterContainer" parent="CombatRewards"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,13 +38,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CustomItemList" parent="CombatRewards" unique_id=957331265 instance=ExtResource("3_jr68y")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="CustomItemList" parent="CombatRewards/CenterContainer" unique_id=957331265 instance=ExtResource("3_jr68y")]
+layout_mode = 2
 
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("4_rq8dt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.8984013)
