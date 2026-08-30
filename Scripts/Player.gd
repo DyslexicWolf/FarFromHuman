@@ -20,6 +20,9 @@ extends Entity
 @export var bob_horizontal_amplitude: float = 0.05
 @export var bob_smoothing: float = 8.0
 
+@export_group("Testing")
+@export_file("*.tscn") var combat_scene_path: String
+
 var gravity_acceleration_factor: float = 0.0
 var input_vector: Vector2
 var gravity_factor: Vector3
@@ -51,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("CombatTest"):
-		get_tree().change_scene_to_file("res://Scenes/Combat.tscn")
+		SceneTransitionManager.change_scene(combat_scene_path)
 	
 	elif event.is_action_pressed("UICancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

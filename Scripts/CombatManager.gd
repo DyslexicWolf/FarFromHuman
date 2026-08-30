@@ -28,7 +28,7 @@ var lootable_card_array: Array[CardResource]
 var reward_claimed := false
 
 @onready var combat_rewards: CanvasLayer = $CombatRewards
-@onready var custom_item_list: CustomItemList = ($CombatRewards/CenterContainer/CustomItemList)
+@onready var custom_item_list: CustomItemList = $CombatRewards/CenterContainer/CustomItemList
 @onready var combat_player: Player = $Player
 
 

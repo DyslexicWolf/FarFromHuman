@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cc5qv3wdbm5u6"]
+
+[ext_resource type="Script" uid="uid://iyw6ed00mslh" path="res://Scripts/Singletons/SceneTransitionManager.gd" id="1_oy3py"]
+
+[node name="SceneTransitionManager" type="Control" unique_id=1279617711]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_oy3py")

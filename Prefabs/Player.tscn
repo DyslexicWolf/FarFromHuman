@@ -15,6 +15,7 @@ radius = 0.9646094
 [node name="Player" type="CharacterBody3D" unique_id=457108580]
 collision_mask = 2
 script = ExtResource("1_um8lo")
+combat_scene_path = "uid://blwyrjlch51ah"
 entity_name = "Player"
 max_health = 10
 

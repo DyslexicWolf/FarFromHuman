@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dnw155i76t8uk"]
+
+[ext_resource type="Shader" uid="uid://dbql7wfkhhnw" path="res://Shaders/SH_FractalTransition.gdshader" id="1_a0hxu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bjy5o"]
+shader = ExtResource("1_a0hxu")
+shader_parameter/progress = 0.0
+shader_parameter/speed = 0.1
+shader_parameter/pixelation = Vector2(2, 2)
+shader_parameter/zoom = 2.0
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_threshold = 0.24
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/seed = 0.0
+
+[node name="FractalTransition" type="ColorRect" unique_id=78518622]
+material = SubResource("ShaderMaterial_bjy5o")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

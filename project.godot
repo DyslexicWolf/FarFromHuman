@@ -22,6 +22,7 @@ Inventory="*uid://c4aeuw5x0ql0g"
 KeywordGlossary="*uid://bdi5yyyq4edpr"
 PlayerUI="*uid://chqaeg0c4s02u"
 DialogueManager="*uid://c3rodes2l3gxb"
+SceneTransitionManager="*uid://cc5qv3wdbm5u6"
 
 [debug]
 

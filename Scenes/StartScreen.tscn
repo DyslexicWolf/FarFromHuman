@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ko4ly")
+game_scene_path = "uid://fdya7vaypamp"
 
 [node name="BackGround" type="TextureRect" parent="." unique_id=963182035]
 layout_mode = 1
