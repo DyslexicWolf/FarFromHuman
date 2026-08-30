@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kjtddonujq6h"]
+
+[ext_resource type="Texture2D" uid="uid://d1xmxhm6vqfxr" path="res://Prefabs/Kitty/T_Kitty.png" id="1_vsywf"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_vsywf")
+texture_filter = 0
