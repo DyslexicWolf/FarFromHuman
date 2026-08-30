@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bnoj11l3tq76p"]
+
+[ext_resource type="Script" uid="uid://upo8xwflobie" path="res://Scripts/StateMachine/DialogueUIState.gd" id="1_lc8p7"]
+
+[node name="DialogueUIState" type="CanvasLayer" unique_id=1124182724]
+script = ExtResource("1_lc8p7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=953133662]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_right = 164.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "In Dialogue State"
+fit_content = true
+autowrap_mode = 0

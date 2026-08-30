@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://mxkc6ti5py3j"]
+
+[ext_resource type="Script" uid="uid://bl6hkfo0olpq5" path="res://Scripts/StartScreen.gd" id="1_ko4ly"]
+[ext_resource type="Texture2D" uid="uid://b10wdog0ksnk2" path="res://Textures/T_StartScreen.png" id="2_0on6r"]
+
+[node name="StartScreen" type="Control" unique_id=352720383]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ko4ly")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=963182035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0on6r")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1086559702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1149177443]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1967777441]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1595773844]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=459619810]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit Game
+"

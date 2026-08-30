@@ -28,6 +28,7 @@ var is_running: bool = false
 var camera_base_position: Vector3
 var bob_time: float = 0.0
 var bob_fade: float = 0.0
+var current_dialogue_actionable: DialogueActionable3D
 
 @onready var player_camera: Camera3D = $PlayerCamera
 
@@ -51,12 +52,20 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("CombatTest"):
 		get_tree().change_scene_to_file("res://Scenes/Combat.tscn")
+	
 	elif event.is_action_pressed("UICancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	
+	elif event.is_action_pressed("Interact"):
+		if current_dialogue_actionable:
+			in_ui_idle_state = false
+			PlayerUI.on_child_transitioned(PlayerUI.current_state, "DialogueUIState")
+			current_dialogue_actionable.action()
+	
+	
 	if not in_ui_idle_state:
 		return
 	elif event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -140,6 +149,18 @@ func update_head_bobble(delta: float) -> void:
 
 func on_ui_changed(new_ui_state: State) -> void:
 	if new_ui_state.name == "IdleUIState":
+		in_ui_idle_state = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
+		in_ui_idle_state = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_detection_area_entered(area: Area3D) -> void:
+	if area is DialogueActionable3D:
+		current_dialogue_actionable = area
+
+
+func _on_detection_area_exited(area: Area3D) -> void:
+	if area == current_dialogue_actionable:
+		current_dialogue_actionable = null

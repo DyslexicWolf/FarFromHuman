@@ -16,7 +16,8 @@ albedo_color = Color(0.29411766, 0, 1, 1)
 script = ExtResource("1_mvyk2")
 
 [node name="DialogueActionable3D" type="Area3D" parent="." unique_id=1415905265]
-collision_layer = 0
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_gv3p3")
 dialogue_resource = ExtResource("2_rbn3l")
 dialogue_cue = "start"
