@@ -23,8 +23,12 @@ seamless = true
 
 [resource]
 _shader_parameters = {
+&"auto_base_texture": null,
+&"auto_height_reduction": null,
+&"auto_overlay_texture": null,
+&"auto_slope": null,
 &"bias_distance": null,
-&"blend_sharpness": null,
+&"blend_sharpness": 0.0,
 &"depth_blur": null,
 &"enable_macro_variation": null,
 &"enable_projection": null,
@@ -41,3 +45,4 @@ _shader_parameters = {
 &"projection_threshold": null
 }
 world_background = 0
+auto_shader = true
