@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FarFromHuman"
-run/main_scene="uid://fdya7vaypamp"
+run/main_scene="uid://mxkc6ti5py3j"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Textures/icon.svg"
 
