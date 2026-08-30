@@ -1,15 +1,17 @@
 class_name CustomItemList
 extends ScrollContainer
 
+signal reward_selected(card: CardResource)
+
 @export var columns: int = 5
 @export var card_list: Array[CardResource]
-@export var box := preload("uid://cpqlqd8iprr3k")
+@export var box: PackedScene = preload("res://Prefabs/UI/RewardBox.tscn")
 @export var box_size := 120
 @export var y_size := 360
 @export var scroll_bar_offset := 30
 @export var item_offset := Vector2(0, 0)
 
-var box_nodes: Array[InventoryBox]
+var box_nodes: Array[RewardBox]
 
 @onready var v_box_container := $VBoxContainer
 
@@ -38,11 +40,12 @@ func generate_boxes(cards: Array[CardResource]) -> void:
 			current_index += 1
 			if card_list.size() <= current_index:
 				break
-			var instance: InventoryBox = box.instantiate()
-			instance.card_resource = card_list[current_index]
+			var instance: RewardBox = box.instantiate()
 			instance.custom_minimum_size += item_offset
 			box_nodes.append(instance)
 			h_box_container.add_child(instance)
+			instance.setup(card_list[current_index])
+			instance.reward_selected.connect(on_reward_selected)
 		v_box_container.add_child(h_box_container)
 
 
@@ -53,5 +56,9 @@ func create_h_box_container(cols: int) -> HBoxContainer:
 	return container
 
 
-func get_box_nodes() -> Array[InventoryBox]:
+func on_reward_selected(card: CardResource) -> void:
+	reward_selected.emit(card)
+
+
+func get_box_nodes() -> Array[RewardBox]:
 	return box_nodes
