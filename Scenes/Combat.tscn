@@ -13,6 +13,7 @@ size = Vector3(13.6796875, 1, 12.491211)
 
 [node name="Combat" type="Node3D" unique_id=515621448]
 script = ExtResource("1_5y3t8")
+game_scene_path = "uid://fdya7vaypamp"
 
 [node name="Enemy" parent="." unique_id=1323056336 instance=ExtResource("2_jr68y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1986997, 1.1484601, -5.2867475)

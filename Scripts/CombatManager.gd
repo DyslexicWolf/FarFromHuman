@@ -14,6 +14,7 @@ enum CombatState {
 @export var max_energy := 3
 @export var cards_per_equipped_body_part := 5
 @export var hand_size := 6
+@export_file("*.tscn") var game_scene_path: String
 
 var state: CombatState = CombatState.PLAYER_TURN
 var current_energy: int = max_energy
@@ -150,12 +151,12 @@ func start_enemy_turn() -> void:
 
 
 func end_combat() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	for child: State in PlayerUI.get_children():
 		if child.visible == true:
 			child.transitioned.emit(child, "IdleUIState")
 			break
 	PlayerUI.in_combat = false
+	SceneTransitionManager.change_scene(game_scene_path)
 
 
 func show_combat_rewards() -> void:
