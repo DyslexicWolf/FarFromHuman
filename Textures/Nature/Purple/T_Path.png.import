@@ -2,29 +2,28 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duu8rqmi02f06"
-path.bptc="res://.godot/imported/T_Packed_Grass.png-c901410af0e2d0c92e9077ffab602d3f.bptc.ctex"
+uid="uid://b0d58xi5jy8rp"
+path="res://.godot/imported/T_Path.png-096c1bfa7a3332f33f4f9d12146e262e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Packed/T_Packed_Grass.png"
-dest_files=["res://.godot/imported/T_Packed_Grass.png-c901410af0e2d0c92e9077ffab602d3f.bptc.ctex"]
+source_file="res://Textures/Nature/Purple/T_Path.png"
+dest_files=["res://.godot/imported/T_Path.png-096c1bfa7a3332f33f4f9d12146e262e.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=true
+compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

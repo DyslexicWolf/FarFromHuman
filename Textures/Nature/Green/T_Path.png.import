@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfd0akhd5185m"
-path.bptc="res://.godot/imported/T_Packed_Path.png-aa392bb8d0686028c301da3670d4e46d.bptc.ctex"
+uid="uid://cmwb1dm2t7q4o"
+path.bptc="res://.godot/imported/T_Path.png-e8e26a4556ef7493bbb5e64379ae4ca1.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Packed/T_Packed_Path.png"
-dest_files=["res://.godot/imported/T_Packed_Path.png-aa392bb8d0686028c301da3670d4e46d.bptc.ctex"]
+source_file="res://Textures/Nature/Green/T_Path.png"
+dest_files=["res://.godot/imported/T_Path.png-e8e26a4556ef7493bbb5e64379ae4ca1.bptc.ctex"]
 
 [params]
 
