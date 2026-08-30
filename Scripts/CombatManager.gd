@@ -27,6 +27,7 @@ var enemies: Array[Enemy] = []
 var lootable_card_array: Array[CardResource]
 
 @onready var combat_rewards: Control = $CombatRewards
+@onready var combat_player: Player = $Player
 
 
 func _ready() -> void:
@@ -132,9 +133,16 @@ func discard_hand() -> void:
 func start_enemy_turn() -> void:
 	state = CombatState.ENEMY_TURN
 	turn_changed.emit(state)
-
-	#still need to implement the enemy's turn logic here
 	print("is enemy's turn")
+
+	if combat_player == null:
+		push_error("The Player autoload is not an Entity")
+		return
+	
+	for enemy: Enemy in enemies:
+		if is_instance_valid(enemy):
+			await enemy.perform_turn(combat_player)
+	
 	start_player_turn()
 
 
