@@ -28,9 +28,7 @@ var lootable_card_array: Array[CardResource]
 var reward_claimed := false
 
 @onready var combat_rewards: CanvasLayer = $CombatRewards
-@onready var custom_item_list: CustomItemList = (
-	$CombatRewards/CenterContainer/CustomItemList
-)
+@onready var custom_item_list: CustomItemList = ($CombatRewards/CenterContainer/CustomItemList)
 @onready var combat_player: Player = $Player
 
 
@@ -143,11 +141,11 @@ func start_enemy_turn() -> void:
 	if combat_player == null:
 		push_error("The Player autoload is not an Entity")
 		return
-	
+
 	for enemy: Enemy in enemies:
 		if is_instance_valid(enemy):
 			await enemy.perform_turn(combat_player)
-	
+
 	start_player_turn()
 
 
@@ -169,9 +167,7 @@ func on_reward_selected(card: CardResource) -> void:
 	if reward_claimed:
 		return
 
-	var inventory_panel := get_node_or_null(
-		"/root/PlayerUI/InventoryState/Panel/InventoryPanel"
-	)
+	var inventory_panel := get_node_or_null("/root/PlayerUI/InventoryState/Panel/InventoryPanel")
 	if inventory_panel == null:
 		push_error("Could not find the player's inventory panel.")
 		return
