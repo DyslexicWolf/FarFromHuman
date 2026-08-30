@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm00xhavw43c3"]
 
 [ext_resource type="PackedScene" uid="uid://c4djd3eb0deoi" path="res://Prefabs/Tree/SM_Tree.glb" id="1_3705m"]
-[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/Leaves.gdshader" id="2_8nq2d"]
+[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/SH_Leaves.gdshader" id="2_8nq2d"]
 [ext_resource type="Material" uid="uid://gu2c0hr5v7ym" path="res://Prefabs/Tree/MAT_UnderLeaves.tres" id="3_s3uc6"]
 [ext_resource type="Material" uid="uid://bnup8uea65j8m" path="res://Prefabs/Tree/MAT_Trunk.tres" id="4_s3uc6"]
 

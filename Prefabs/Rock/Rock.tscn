@@ -3,11 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://drag2ksbaplu1" path="res://Prefabs/Rock/SM_Rock.glb" id="1_df0te"]
 [ext_resource type="Material" uid="uid://dvodon78w1ps4" path="res://Prefabs/Rock/MAT_Rocks.tres" id="2_l1rmm"]
 
-[node name="Rock" type="CollisionShape3D" unique_id=1065965341]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xln7g"]
+size = Vector3(0.8408203, 0.44299316, 0.8222656)
+
+[node name="Rock" type="StaticBody3D" unique_id=1776013933]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1065965341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20594764, 0)
+shape = SubResource("BoxShape3D_xln7g")
 
 [node name="SM_Rock" parent="." unique_id=914280237 instance=ExtResource("1_df0te")]
 
-[node name="Cube_001" parent="SM_Rock" index="0" unique_id=1363601800]
+[node name="Cube_001" parent="SM_Rock" index="0" unique_id=1821223141]
 material_override = ExtResource("2_l1rmm")
 
 [editable path="SM_Rock"]
