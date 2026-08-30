@@ -9,7 +9,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_et8qu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggh84"]
-albedo_color = Color(0.7137255, 0.16078432, 0.1254902, 1)
+albedo_color = Color(0.49527818, 0.31884, 0.5519215, 1)
 
 [node name="Enemy" type="CharacterBody3D" unique_id=5178141]
 collision_layer = 4

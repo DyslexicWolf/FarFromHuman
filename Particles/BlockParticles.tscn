@@ -21,3 +21,5 @@ speed_scale = 2.0
 explosiveness = 0.45
 process_material = SubResource("ParticleProcessMaterial_oqpi0")
 draw_pass_1 = ExtResource("1_cg5t8")
+
+[connection signal="ready" from="." to="." method="set_emitting" binds= [true]]
