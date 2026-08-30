@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btutn0xik2sgw"]
+
+[ext_resource type="Material" uid="uid://ct10ovn333aeb" path="res://Materials/MAT_BlockParticle.tres" id="1_1f7m6"]
+[ext_resource type="ArrayMesh" uid="uid://cpxnshjr22wfj" path="res://Models/SM_BlockParticle.obj" id="1_cg5t8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oqpi0"]
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 7.5, 0)
+damping_min = 5.0
+damping_max = 5.0
+
+[node name="BlockParticles" type="GPUParticles3D" unique_id=1100829521]
+material_override = ExtResource("1_1f7m6")
+emitting = false
+amount = 15
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.45
+process_material = SubResource("ParticleProcessMaterial_oqpi0")
+draw_pass_1 = ExtResource("1_cg5t8")
+
+[connection signal="ready" from="." to="." method="set_emitting" binds= [true]]
