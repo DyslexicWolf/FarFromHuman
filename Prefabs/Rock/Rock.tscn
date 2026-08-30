@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crs34cb0twcji"]
+
+[ext_resource type="PackedScene" uid="uid://drag2ksbaplu1" path="res://Prefabs/Rock/SM_Rock.glb" id="1_df0te"]
+[ext_resource type="Material" uid="uid://dvodon78w1ps4" path="res://Prefabs/Rock/MAT_Rocks.tres" id="2_l1rmm"]
+
+[node name="Rock" type="CollisionShape3D" unique_id=1065965341]
+
+[node name="SM_Rock" parent="." unique_id=914280237 instance=ExtResource("1_df0te")]
+
+[node name="Cube_001" parent="SM_Rock" index="0" unique_id=1363601800]
+material_override = ExtResource("2_l1rmm")
+
+[editable path="SM_Rock"]

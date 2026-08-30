@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvodon78w1ps4"]
+
+[ext_resource type="Texture2D" uid="uid://dxn4ioxrq1m4q" path="res://Prefabs/Rock/T_Rocks.png" id="1_lpq6x"]
+
+[resource]
+albedo_texture = ExtResource("1_lpq6x")
+texture_filter = 0
