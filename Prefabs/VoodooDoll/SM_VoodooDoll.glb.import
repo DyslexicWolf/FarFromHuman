@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cydx5eadttfn0"
-path="res://.godot/imported/SM_VoodooDoll.glb-f3a719ef3839fc0b6aa14753c16afb42.scn"
+path="res://.godot/imported/SM_VoodooDoll.glb-a4912e405c7d0752cdcf33600e3d47cc.scn"
 
 [deps]
 
-source_file="res://Models/SM_VoodooDoll.glb"
-dest_files=["res://.godot/imported/SM_VoodooDoll.glb-f3a719ef3839fc0b6aa14753c16afb42.scn"]
+source_file="res://Prefabs/VoodooDoll/SM_VoodooDoll.glb"
+dest_files=["res://.godot/imported/SM_VoodooDoll.glb-a4912e405c7d0752cdcf33600e3d47cc.scn"]
 
 [params]
 
@@ -39,7 +39,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"@MATERIAL:0": {
+"use_external/path": "uid://dr3tqu48fh1kj"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

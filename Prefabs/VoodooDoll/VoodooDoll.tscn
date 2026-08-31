@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cf0cd8cryxv4h"]
+
+[ext_resource type="PackedScene" uid="uid://cydx5eadttfn0" path="res://Prefabs/VoodooDoll/SM_VoodooDoll.glb" id="1_ill87"]
+[ext_resource type="Script" uid="uid://kqwnpd6hwkwg" path="res://Scripts/VoodooDoll.gd" id="1_shqyn"]
+[ext_resource type="Material" uid="uid://dr3tqu48fh1kj" path="res://Materials/MAT_VoodooDoll.tres" id="2_fakao"]
+[ext_resource type="PackedScene" uid="uid://cxyvl0g7iu8d7" path="res://Prefabs/CardDisplay3D.tscn" id="3_rkwl7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fakao"]
+size = Vector3(0.33920288, 0.08691406, 0.206604)
+
+[node name="VoodooDoll" type="StaticBody3D" unique_id=1728398860 node_paths=PackedStringArray("body_part_displays")]
+script = ExtResource("1_shqyn")
+body_part_displays = [NodePath("HeadCardDisplay3D"), NodePath("LeftArmCardDisplay3D"), NodePath("TorsoCardDisplay3D"), NodePath("RightArmCardDisplay3D"), NodePath("LeftLegCardDisplay3D"), NodePath("RightLegCardDisplay3D")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1852941819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15586853, 0.008300781, -0.004119873)
+shape = SubResource("BoxShape3D_fakao")
+
+[node name="SM_VoodooDoll" parent="." unique_id=1404130022 instance=ExtResource("1_ill87")]
+
+[node name="Cube" parent="SM_VoodooDoll" index="0" unique_id=1292987653]
+surface_material_override/0 = ExtResource("2_fakao")
+
+[node name="HeadCardDisplay3D" parent="." unique_id=1127104588 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.23422855, 0.0596395, -0.001973454)
+
+[node name="LeftArmCardDisplay3D" parent="." unique_id=1256969616 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.092308655, 0.02066195, -0.09090619)
+
+[node name="TorsoCardDisplay3D" parent="." unique_id=429460934 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.12676308, 0.051572517, -0.001964137)
+
+[node name="RightArmCardDisplay3D" parent="." unique_id=1793251666 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.10200134, 0.021772005, 0.091527015)
+
+[node name="LeftLegCardDisplay3D" parent="." unique_id=1431890703 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.015179746, 0.026223823, -0.030496135)
+
+[node name="RightLegCardDisplay3D" parent="." unique_id=483181901 instance=ExtResource("3_rkwl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.00888972, 0.026223823, 0.038583204)
+
+[editable path="SM_VoodooDoll"]

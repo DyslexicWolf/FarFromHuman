@@ -3,9 +3,11 @@ extends InventoryBox
 
 enum BodyPartType {
 	HEAD,
-	BODY,
-	ARM,
-	LEG,
+	TORSO,
+	LEFT_ARM,
+	RIGHT_ARM,
+	LEFT_LEG,
+	RIGHT_LEG,
 }
 
 @export var bodypart_box_type: BodyPartType

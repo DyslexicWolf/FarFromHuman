@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qq214t11g7t"]
 
 [ext_resource type="Script" uid="uid://ccllbttajf6n0" path="res://Scripts/Player.gd" id="1_um8lo"]
+[ext_resource type="PackedScene" uid="uid://cf0cd8cryxv4h" path="res://Prefabs/VoodooDoll/VoodooDoll.tscn" id="2_x3d5u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_et8qu"]
 
@@ -34,6 +35,9 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1943285806]
 shape = SubResource("SphereShape3D_ggh84")
+
+[node name="VoodooDoll" parent="." unique_id=1728398860 instance=ExtResource("2_x3d5u")]
+transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, 2.3841858e-07, -0.89778215)
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_exited"]
