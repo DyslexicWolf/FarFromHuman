@@ -3,20 +3,27 @@
 [ext_resource type="Script" uid="uid://cledhmafokotl" path="res://Scripts/Enemy.gd" id="1_d17oq"]
 [ext_resource type="PackedScene" uid="uid://bcxlwd2veue2f" path="res://Prefabs/Kitty/CHAR_Kitty.glb" id="1_qndfv"]
 [ext_resource type="Material" uid="uid://kjtddonujq6h" path="res://Prefabs/Kitty/MAT_Kitty.tres" id="2_d17oq"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_q2fbi"]
+[ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="3_tga5t"]
 [ext_resource type="Texture2D" uid="uid://y2ssfueppchd" path="res://Textures/HealthBar/T_HealthbarBackground.png" id="4_s4dm6"]
+[ext_resource type="Resource" uid="uid://b0wwqd0pqcsw5" path="res://Resources/BloodyLeg.tres" id="4_wvlgw"]
+[ext_resource type="Resource" uid="uid://b6hg8ayrb6x8f" path="res://Resources/NormalArm.tres" id="5_4t6j8"]
 [ext_resource type="Texture2D" uid="uid://cw2u4nc32otig" path="res://Textures/HealthBar/T_HealthbarInside.png" id="5_vrtnv"]
+[ext_resource type="Resource" uid="uid://qrw5tgu8bqw7" path="res://Resources/NormalLeg.tres" id="6_f4rd3"]
+[ext_resource type="Resource" uid="uid://bf5rlfmjf880x" path="res://Resources/NormalHead.tres" id="7_ae86t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et8qu"]
 size = Vector3(2.6767578, 1.7043457, 0.8232422)
 
 [node name="SkeletonJaguar" type="CharacterBody3D" unique_id=898597057]
 script = ExtResource("1_d17oq")
+lootable_cards = Array[ExtResource("2_q2fbi")]([ExtResource("3_tga5t"), ExtResource("4_wvlgw"), ExtResource("5_4t6j8"), ExtResource("6_f4rd3"), ExtResource("7_ae86t")])
 entity_name = "SkeletonJaguar"
 max_health = 6
 
 [node name="CHAR_Kitty" parent="." unique_id=889492436 instance=ExtResource("1_qndfv")]
 
-[node name="DM_Kitty" parent="CHAR_Kitty" index="0" unique_id=576959069]
+[node name="DM_Kitty" parent="CHAR_Kitty" index="0" unique_id=1855553330]
 material_override = ExtResource("2_d17oq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1952978667]
