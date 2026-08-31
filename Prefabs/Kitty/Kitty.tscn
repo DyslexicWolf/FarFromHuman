@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://cledhmafokotl" path="res://Scripts/Enemy.gd" id="1_d17oq"]
 [ext_resource type="PackedScene" uid="uid://bcxlwd2veue2f" path="res://Prefabs/Kitty/CHAR_Kitty.glb" id="1_qndfv"]
 [ext_resource type="Material" uid="uid://kjtddonujq6h" path="res://Prefabs/Kitty/MAT_Kitty.tres" id="2_d17oq"]
+[ext_resource type="Texture2D" uid="uid://y2ssfueppchd" path="res://Textures/HealthBar/T_HealthbarBackground.png" id="4_s4dm6"]
+[ext_resource type="Texture2D" uid="uid://cw2u4nc32otig" path="res://Textures/HealthBar/T_HealthbarInside.png" id="5_vrtnv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et8qu"]
 size = Vector3(2.6767578, 1.7043457, 0.8232422)
 
-[node name="Kitty" type="CharacterBody3D" unique_id=898597057]
+[node name="SkeletonJaguar" type="CharacterBody3D" unique_id=898597057]
 script = ExtResource("1_d17oq")
+entity_name = "SkeletonJaguar"
+max_health = 6
 
 [node name="CHAR_Kitty" parent="." unique_id=889492436 instance=ExtResource("1_qndfv")]
 
@@ -20,7 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24560547, 0.85266113, 0)
 shape = SubResource("BoxShape3D_et8qu")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=313884985]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1024.0
+offset_bottom = 101.0
+value = 100.0
+texture_under = ExtResource("4_s4dm6")
+texture_progress = ExtResource("5_vrtnv")
 
 [editable path="CHAR_Kitty"]

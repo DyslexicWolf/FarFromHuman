@@ -24,17 +24,28 @@ var player: Player
 
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
-	current_health = max_health
 	current_health_changed.connect(on_current_health_changed)
 	max_health_changed.connect(on_max_health_changed)
+	player = get_tree().get_first_node_in_group("Player")
+	current_health = max_health
+	#This line triggers the max_health_changed signal, otherwise it doesnt get triggered
+	#from the export value being set
+	max_health = max_health
 
 
-func _process(delta: float) -> void:
-	var world_pos := player.global_position + Vector3(0, 2, 0)
-	var screen_pos: Vector2 = player.get_child(0).unproject_position(world_pos)
+func _process(_delta: float) -> void:
+	var camera := get_viewport().get_camera_3d()
+	if camera == null:
+		return
 
-	health_bar.position = screen_pos
+	var world_pos := global_position + Vector3(0, 2.5, 0)
+	if camera.is_position_behind(world_pos):
+		health_bar.visible = false
+		return
+	health_bar.visible = true
+
+	var screen_pos: Vector2 = camera.unproject_position(world_pos)
+	health_bar.position = screen_pos - health_bar.size / 2.0
 
 
 ## Does everything the enemy will do in his turn
