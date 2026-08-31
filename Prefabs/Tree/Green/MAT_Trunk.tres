@@ -1,7 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bnup8uea65j8m"]
 
-[ext_resource type="Texture2D" uid="uid://djxh113gmbuii" path="res://Textures/Nature/Green/T_Bark.png" id="1_o4qco"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_axe3e"]
+load_path = "res://.godot/imported/T_Bark.png-782a24d4299f0a1547b1fd711d2e7f22.s3tc.ctex"
 
 [resource]
-albedo_texture = ExtResource("1_o4qco")
+albedo_texture = SubResource("CompressedTexture2D_axe3e")
 texture_filter = 2
