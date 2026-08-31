@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if not in_ui_idle_state:
 		return
 	if event.is_action_pressed("CombatTest"):
-		SceneTransitionManager.change_scene(combat_scene_path)
+		SceneTransitionManager.start_combat(combat_scene_path)
 	
 	elif event.is_action_pressed("UICancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
