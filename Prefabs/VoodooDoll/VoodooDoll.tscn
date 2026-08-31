@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://kqwnpd6hwkwg" path="res://Scripts/VoodooDoll.gd" id="1_shqyn"]
 [ext_resource type="Material" uid="uid://dr3tqu48fh1kj" path="res://Materials/MAT_VoodooDoll.tres" id="2_fakao"]
 [ext_resource type="PackedScene" uid="uid://cxyvl0g7iu8d7" path="res://Prefabs/CardDisplay3D.tscn" id="3_rkwl7"]
+[ext_resource type="Material" uid="uid://dntmot7c0ngr" path="res://Materials/MAT_BloodCover.tres" id="3_tubsu"]
 [ext_resource type="PackedScene" uid="uid://ck8ksttwu2ux4" path="res://Prefabs/VoodooDoll/Pin.tscn" id="5_t561f"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t561f"]
@@ -18,7 +19,8 @@ shape = SubResource("ConcavePolygonShape3D_t561f")
 
 [node name="SM_VoodooDoll" parent="." unique_id=1404130022 instance=ExtResource("1_ill87")]
 
-[node name="Cube" parent="SM_VoodooDoll" index="0" unique_id=1773267707]
+[node name="Cube" parent="SM_VoodooDoll" index="0" unique_id=65109844]
+material_overlay = ExtResource("3_tubsu")
 surface_material_override/0 = ExtResource("2_fakao")
 
 [node name="HeadPin" parent="." unique_id=594089848 instance=ExtResource("5_t561f")]

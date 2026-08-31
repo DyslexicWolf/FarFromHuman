@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dntmot7c0ngr"]
+
+[ext_resource type="Shader" uid="uid://cqsl3kt2k5cun" path="res://Shaders/SH_BloodCover.gdshader" id="1_07aax"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_55mdc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_07aax")
+shader_parameter/noise = SubResource("NoiseTexture2D_55mdc")
+shader_parameter/noise_shading = 1.0
+shader_parameter/intensity = 0.0
+shader_parameter/color = Color(1, 0, 0, 1)
