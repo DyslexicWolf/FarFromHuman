@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardResource" format=3 uid="uid://nd6436bnle6"]
+
+[ext_resource type="Texture2D" uid="uid://dajviqmcqguvs" path="res://Textures/BaseCard2D/T_JaguarPaw.png" id="1_e80rr"]
+[ext_resource type="Script" uid="uid://drsqxb1onfrgq" path="res://Scripts/ResourceScripts/CardResource.gd" id="2_5e12l"]
+
+[resource]
+script = ExtResource("2_5e12l")
+card_name = "Jaguar Paw"
+card_texture = ExtResource("1_e80rr")
+block_amount = 3
+explanation = "A special paw taken from a skeleton jaguar"
+body_part_type = 5
+weakness_amount = 2
+metadata/_custom_type_script = "uid://drsqxb1onfrgq"

@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://b6vwktjdf1tko" path="res://Resources/ExampleCard.tres" id="2_e6mpe"]
 [ext_resource type="Resource" uid="uid://b6hg8ayrb6x8f" path="res://Resources/NormalArm.tres" id="2_in08m"]
 [ext_resource type="Resource" uid="uid://qrw5tgu8bqw7" path="res://Resources/NormalLeg.tres" id="4_40j1b"]
-[ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="6_e5shn"]
 [ext_resource type="PackedScene" uid="uid://b5dgysfbqkqbf" path="res://Prefabs/UI/CardTooltip.tscn" id="8_37yuc"]
 
 [node name="InventoryState" type="CanvasLayer" unique_id=1402076577]
@@ -158,7 +157,6 @@ offset_top = -67.5
 offset_right = 155.0
 offset_bottom = 67.5
 grow_vertical = 2
-starting_card = ExtResource("6_e5shn")
 body_parts_panel = NodePath("../../BodyPartsPanel")
 inventory_panel = NodePath("..")
 card_tooltip = NodePath("../../CardTooltipPanel/CardTooltip")

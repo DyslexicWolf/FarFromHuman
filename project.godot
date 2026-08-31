@@ -30,7 +30,7 @@ gdscript/warnings/untyped_declaration=2
 
 [dialogue_manager]
 
-runtime/balloon_path="res://Dialogue/DialogueState.tscn"
+runtime/balloon_path="res://Dialogue/DialogueBalloon.tscn"
 
 [display]
 
