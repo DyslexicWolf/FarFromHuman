@@ -77,7 +77,7 @@ func start_player_turn() -> void:
 	state = CombatState.PLAYER_TURN
 	turn_changed.emit(state)
 	current_energy = max_energy
-	player_energy.text = "{0}/{1}".format([current_energy, max_energy])
+	player_energy.text = "{0}".format([current_energy])
 	print("is players turn")
 	draw_up_to_hand_size()
 
@@ -124,7 +124,7 @@ func play_card(card: CardResource, target: Entity) -> bool:
 	hand_pile.remove_at(idx)
 	discard_pile.append(card)
 	current_energy -= card.energy_cost
-	player_energy.text = "{0}/{1}".format([current_energy, max_energy])
+	player_energy.text = "{0}".format([current_energy])
 
 	played_card.emit(card)
 	if target is Enemy:

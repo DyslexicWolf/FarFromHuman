@@ -11,7 +11,7 @@ script = ExtResource("1_r8e1w")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1419876295]
 transparent_bg = true
-size = Vector2i(225, 300)
+size = Vector2i(300, 400)
 render_target_update_mode = 3
 
 [node name="CardDisplay2D" parent="SubViewport" unique_id=655306505 instance=ExtResource("1_bfrtq")]

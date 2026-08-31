@@ -12,7 +12,7 @@ script = ExtResource("1_iad1y")
 
 [node name="TargetingArrow" parent="." unique_id=543636879 instance=ExtResource("2_5e7ia")]
 
-[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile")]
+[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile", "voodoo_doll_position")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("2_ielgo")
 targeting_arrow = NodePath("../TargetingArrow")
 discard_pile = NodePath("../DiscardPile")
+voodoo_doll_position = NodePath("CardDisplay2D")
 
 [node name="CardDisplay2D" parent="PlayerHand" unique_id=655306505 instance=ExtResource("6_xko20")]
 visible = false
