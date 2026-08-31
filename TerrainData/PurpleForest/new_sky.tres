@@ -1,0 +1,6 @@
+[gd_resource type="Sky" format=3 uid="uid://o6o7pei7hmb1"]
+
+[ext_resource type="Material" uid="uid://d2gufurs4g10w" path="res://TerrainData/PurpleForest/new_procedural_sky_material.tres" id="1_3yege"]
+
+[resource]
+sky_material = ExtResource("1_3yege")
