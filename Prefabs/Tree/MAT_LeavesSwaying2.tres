@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bsqfovkpuabp2"]
+
+[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/SH_Leaves.gdshader" id="1_w8r4s"]
+[ext_resource type="Texture2D" uid="uid://e4tqw7617fw5" path="res://Textures/Nature/Green/T_UndersideLeaves.png" id="2_m1hqx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w8r4s")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_m1hqx")
+shader_parameter/alpha_scissor_threshold = 0.585
+shader_parameter/albedo_texture_size = Vector2i(128, 128)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/wind_direction = 90.0
+shader_parameter/wind_strenth = 1.0
+shader_parameter/sway_speed = 2.0
+shader_parameter/bendieness_multiplier = 0.0

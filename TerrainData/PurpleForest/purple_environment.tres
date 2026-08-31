@@ -1,0 +1,11 @@
+[gd_resource type="Environment" format=3 uid="uid://bv7vwy723b66w"]
+
+[ext_resource type="Sky" uid="uid://o6o7pei7hmb1" path="res://TerrainData/PurpleForest/new_sky.tres" id="1_ke3dw"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_ke3dw")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0205
+volumetric_fog_albedo = Color(0.44980407, 0.3645923, 0.7663934, 1)
+volumetric_fog_emission = Color(0.28778407, 0.28778407, 0.28778407, 1)
