@@ -100,12 +100,12 @@ func reshuffle_discard_into_deck() -> void:
 
 func can_play_card(card: CardResource) -> bool:
 	if not state == CombatState.PLAYER_TURN:
-		explanation_label.text = "It is not your turn to play cards."
+		explanation_label.text = "It is not your turn to play cards"
 		explanation_label.visible = true
 		explanation_timer.start()
 		return false
 	elif current_energy < card.energy_cost:
-		explanation_label.text = "You don't have enough energy to play this card."
+		explanation_label.text = "You do not have enough energy to play this card"
 		explanation_label.visible = true
 		explanation_timer.start()
 		return false

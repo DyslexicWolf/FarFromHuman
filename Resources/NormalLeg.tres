@@ -7,7 +7,7 @@
 script = ExtResource("2_l3f6o")
 card_name = "Normal Leg"
 card_texture = ExtResource("1_a74rj")
-attack_damage = 2
-explanation = "A normal attack and a normal block"
+block_amount = 2
+explanation = "Nothing special about this leg"
 body_part_type = 4
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"

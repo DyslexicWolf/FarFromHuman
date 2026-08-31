@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b56v32e0d4sqw" path="res://Scripts/RewardBox.gd" id="1_reward"]
 [ext_resource type="Texture2D" uid="uid://b7fntpjepnvc8" path="res://Textures/T_TempFrame.png" id="2_frame"]
+[ext_resource type="Resource" uid="uid://dnfw8w45lxe4" path="res://Resources/BloodyArm.tres" id="2_r53v2"]
 
 [node name="RewardBox" type="Control" unique_id=2115388423 node_paths=PackedStringArray("card_texture")]
 custom_minimum_size = Vector2(135, 135)
@@ -13,6 +14,7 @@ offset_bottom = 135.0
 mouse_default_cursor_shape = 2
 script = ExtResource("1_reward")
 card_texture = NodePath("CardTexture")
+card_resource = ExtResource("2_r53v2")
 
 [node name="CardTexture" type="TextureRect" parent="." unique_id=791172371]
 layout_mode = 1

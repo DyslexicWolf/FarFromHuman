@@ -10,6 +10,6 @@ card_texture = ExtResource("1_eovo7")
 attack_damage = 0
 block_amount = 0
 energy_cost = 0
-explanation = "A normal attack and a normal block"
+explanation = "Nothing special about this head"
 weakness_amount = 1
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"

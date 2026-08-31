@@ -7,8 +7,7 @@
 script = ExtResource("2_xlock")
 card_name = "Bloody Arm"
 card_texture = ExtResource("1_uy6va")
-attack_damage = 0
-block_amount = 3
+attack_damage = 2
 energy_cost = 2
 explanation = "An attack that inflicts weakness on the target"
 body_part_type = 3

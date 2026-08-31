@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dkeiv76ehlj46"]
+
+[ext_resource type="Texture2D" uid="uid://b2kseuohe61js" path="res://Textures/BaseCard2D/T_CardBackground.png" id="1_5r1np"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_et8qu"]
+texture = ExtResource("1_5r1np")
+
+[node name="Tooltip" type="PanelContainer" unique_id=2026414106]
+custom_minimum_size = Vector2(250, 100)
+custom_maximum_size = Vector2(250, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_et8qu")
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=381386056]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Example Card Name"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

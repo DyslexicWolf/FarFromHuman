@@ -11,7 +11,16 @@ var card_resource: CardResource
 func setup(card: CardResource) -> void:
 	card_resource = card
 	card_texture.texture = card.card_texture
-	tooltip_text = card.card_name
+
+
+func _make_custom_tooltip(_for_text: String) -> Object:
+	if not card_resource:
+		return
+	var tooltip_instance := preload("uid://dkeiv76ehlj46").instantiate()
+	var tooltip_instance_text := tooltip_instance.get_node("Text")
+
+	tooltip_instance_text.text = card_resource.card_name
+	return tooltip_instance
 
 
 func _gui_input(event: InputEvent) -> void:
