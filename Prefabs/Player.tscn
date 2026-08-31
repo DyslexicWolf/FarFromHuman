@@ -30,14 +30,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
 [node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875823, -0.23482281)
 
+[node name="VoodooDoll" parent="PlayerCamera" unique_id=1728398860 instance=ExtResource("2_x3d5u")]
+transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, -0.458758, -0.66295934)
+
 [node name="DetectionArea" type="Area3D" parent="." unique_id=300037680]
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1943285806]
 shape = SubResource("SphereShape3D_ggh84")
-
-[node name="VoodooDoll" parent="." unique_id=1728398860 instance=ExtResource("2_x3d5u")]
-transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, 2.3841858e-07, -0.89778215)
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_exited"]
