@@ -6,7 +6,7 @@
 [ext_resource type="Environment" uid="uid://bv7vwy723b66w" path="res://TerrainData/PurpleForest/purple_environment.tres" id="3_s0bd2"]
 [ext_resource type="PackedScene" uid="uid://cb0o6hamff0fq" path="res://Prefabs/Tree/Purple/TreePurple.tscn" id="4_5mh45"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_bhi5t"]
-[ext_resource type="PackedScene" uid="uid://b6hvc33i1e838" path="res://Scripts/OverworldKitty.tscn" id="7_c0nrm"]
+[ext_resource type="PackedScene" uid="uid://b6hvc33i1e838" path="res://Prefabs/Kitty/OverworldKitty.tscn" id="7_c0nrm"]
 
 [node name="PurpleForest" type="Node3D" unique_id=133502128]
 

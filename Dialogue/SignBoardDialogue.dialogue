@@ -1,4 +1,12 @@
 ~ start
-Sign Board: The sign points to the right toward the Purple Forest.
-- Stop talking => END
+Sign Board: The sign points to the right toward the Purple Forest
+- Inspect the sign
+	Sign Board: You find a note pinned on it
+- Leave => END
 
+~ inspected_sign
+- Read the note on the sign
+	Pinned Note: That darn thing keeps on wilting my flowers with its stench
+	Pinned Note: Definitely dont follow him in the purple forest
+	Pinned Note: Or do
+- Leave => END
