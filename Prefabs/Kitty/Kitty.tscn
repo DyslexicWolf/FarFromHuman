@@ -18,7 +18,7 @@ size = Vector3(2.6767578, 1.7043457, 0.8232422)
 script = ExtResource("1_d17oq")
 lootable_cards = Array[ExtResource("2_q2fbi")]([ExtResource("3_c4n11"), ExtResource("5_4t6j8"), ExtResource("6_f4rd3"), ExtResource("7_ae86t")])
 entity_name = "SkeletonJaguar"
-max_health = 6
+max_health = 10
 
 [node name="CHAR_Kitty" parent="." unique_id=889492436 instance=ExtResource("1_qndfv")]
 

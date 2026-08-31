@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
 [ext_resource type="PackedScene" uid="uid://crs34cb0twcji" path="res://Prefabs/Rock/Rock.tscn" id="6_xo2t3"]
 [ext_resource type="PackedScene" uid="uid://bukd03xr7lt7k" path="res://Prefabs/SignBoard.tscn" id="7_emnsf"]
-[ext_resource type="Script" path="res://Scripts/SceneTransitionArea3D.gd" id="8_transition"]
+[ext_resource type="Script" uid="uid://g6j2vhjt0np7" path="res://Scripts/SceneTransitionArea3D.gd" id="8_transition"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
 
@@ -46,35 +46,55 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=1381029995]
-transform = Transform3D(0.85986125, 0, -0.5105278, 0, 1, 0, 0.5105278, 0, 0.85986125, 137.84181, 19.60107, 195.34433)
+transform = Transform3D(0.9447967, 0, 0.3276571, 0, 1, 0, -0.3276571, 0, 0.9447967, 150.58018, 9.60622, 158.57826)
 size = Vector3(32.01184, 18.111969, 17.08899)
 shape = 0
 material = SubResource("FogMaterial_u6hvw")
 
-[node name="PurpleForestTransition" type="Area3D" parent="."]
-transform = Transform3D(0.85986125, 0, -0.5105278, 0, 1, 0, 0.5105278, 0, 0.85986125, 137.84181, 19.60107, 195.34433)
+[node name="PurpleForestTransition" type="Area3D" parent="." unique_id=975303017]
+transform = Transform3D(0.9447967, 0, 0.3276571, 0, 1, 0, -0.3276571, 0, 0.9447967, 150.58018, 9.60622, 158.57826)
 collision_layer = 0
-collision_mask = 1
 script = ExtResource("8_transition")
 target_scene_path = "uid://c6cdfynrkghon"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleForestTransition"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleForestTransition" unique_id=1434176299]
 shape = SubResource("BoxShape3D_fog_transition")
 
 [node name="Tree" parent="." unique_id=2081053351 instance=ExtResource("4_wc6fi")]
 transform = Transform3D(0.23759478, 0, 0.9713644, 0, 1, 0, -0.9713644, 0, 0.23759478, 122.65802, 0.8600979, 120.78951)
 
+[node name="Tree4" parent="." unique_id=31089225 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.9653678, 0, -0.26089278, 0, 1, 0, 0.26089278, 0, 0.9653678, 147.85844, 2.4858243, 134.55222)
+
+[node name="Tree5" parent="." unique_id=1685866394 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.92872596, 0, 0.8064542, 0, 1.23, 0, -0.8064542, 0, 0.92872596, 131.32452, 1.7509873, 142.79584)
+
 [node name="Tree2" parent="." unique_id=1082875003 instance=ExtResource("4_wc6fi")]
 transform = Transform3D(0.44411066, 0, -0.89597195, 0, 1, 0, 0.89597195, 0, 0.44411066, 131.35583, 0.13162327, 105.36886)
+
+[node name="Tree6" parent="." unique_id=80583761 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.9979497, 0, -0.0640021, -0.0047452594, 0.9972477, -0.07399023, 0.06382594, 0.07414225, 0.9952031, 134.88933, 0.13162327, 109.77107)
+
+[node name="Tree7" parent="." unique_id=1514741106 instance=ExtResource("4_wc6fi")]
+transform = Transform3D(0.65164447, 0.07549448, -0.75475836, -0.15334062, 0.98760176, -0.03360693, 0.7428634, 0.13763487, 0.6551417, 139.86711, 0.015297174, 110.62766)
 
 [node name="Tree3" parent="." unique_id=1062157694 instance=ExtResource("4_wc6fi")]
 transform = Transform3D(-0.4911725, -0.020396717, 0.87082344, -0.027986715, 0.9995792, 0.00762707, -0.87061256, -0.02062528, -0.4915367, 122.11226, 1.861166, 134.76431)
 
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("5_ukis8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39942, 3.2864642, 125.12516)
+transform = Transform3D(0.15382569, 0, -0.9880981, 0, 1, 0, 0.9880981, 0, 0.15382569, 117.186386, 3.2864642, 129.87584)
 
 [node name="Rock" parent="." unique_id=1065965341 instance=ExtResource("6_xo2t3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.30575, 0.84706867, 118.5947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 121.690445, 1.1552268, 122.32161)
+
+[node name="Rock2" parent="." unique_id=1776013933 instance=ExtResource("6_xo2t3")]
+transform = Transform3D(0.1331302, 0, -2.1558936, 0, 2.16, 0, 2.1558936, 0, 0.1331302, 123.59732, 0.8483237, 118.56429)
+
+[node name="Rock3" parent="." unique_id=1384246859 instance=ExtResource("6_xo2t3")]
+transform = Transform3D(0.1331302, 0, -2.1558936, 0, 2.16, 0, 2.1558936, 0, 0.1331302, 141.8952, 1.7040497, 127.9851)
+
+[node name="Rock4" parent="." unique_id=1124280107 instance=ExtResource("6_xo2t3")]
+transform = Transform3D(-1.4467776, -0.61794466, -1.4800614, -0.43195602, 2.0697217, -0.44189334, 1.54462, 9.168948e-09, -1.5098844, 144.51765, 0.7400898, 123.33419)
 
 [node name="SignBoard" parent="." unique_id=1669580253 instance=ExtResource("7_emnsf")]
 transform = Transform3D(0.46536845, 0, 0.88511705, 0, 1, 0, -0.88511705, 0, 0.46536845, 142.6252, 1.5405862, 125.45454)

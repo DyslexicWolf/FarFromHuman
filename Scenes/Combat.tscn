@@ -4,19 +4,58 @@
 [ext_resource type="PackedScene" uid="uid://cib3qpxxcra2o" path="res://Prefabs/Kitty/Kitty.tscn" id="2_rq8dt"]
 [ext_resource type="PackedScene" uid="uid://dr87qrlhbwf15" path="res://Prefabs/UI/CustomItemList.tscn" id="3_jr68y"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="4_rq8dt"]
+[ext_resource type="Terrain3DAssets" uid="uid://c31xw0aehcdl7" path="res://TerrainData/PurpleForest/purpleforest_3d_assets.tres" id="5_0dhp0"]
+[ext_resource type="Environment" uid="uid://bv7vwy723b66w" path="res://TerrainData/PurpleForest/purple_environment.tres" id="6_k8hyy"]
+[ext_resource type="PackedScene" uid="uid://cb0o6hamff0fq" path="res://Prefabs/Tree/Purple/TreePurple.tscn" id="7_vet15"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rq8dt"]
-size = Vector3(13.3828125, 1, 12.076172)
+[sub_resource type="Gradient" id="Gradient_rq8dt"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_0dhp0"]
-size = Vector3(13.6796875, 1, 12.491211)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0dhp0"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k8hyy"]
+noise = SubResource("FastNoiseLite_0dhp0")
+color_ramp = SubResource("Gradient_rq8dt")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_vet15"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_k8hyy"),
+&"projection_threshold": null
+}
+world_background = 0
 
 [node name="Combat" type="Node3D" unique_id=515621448]
 script = ExtResource("1_5y3t8")
 game_scene_path = "uid://c6cdfynrkghon"
 
 [node name="SkeletonJaguar" parent="." unique_id=898597057 instance=ExtResource("2_rq8dt")]
-transform = Transform3D(-0.37076795, 0, -0.9287255, 0, 1, 0, 0.9287255, 0, -0.37076795, 1.7461603, 9.536743e-07, -2.667097)
+transform = Transform3D(-0.37076795, 0, -0.9287255, 0, 1, 0, 0.9287255, 0, -0.37076795, 22.632519, 9.536743e-07, -17.368267)
 
 [node name="CombatRewards" type="CanvasLayer" parent="." unique_id=408767344]
 layer = 10
@@ -42,20 +81,31 @@ layout_mode = 2
 box_size = 135
 
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("4_rq8dt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86360055, 1, 4.924354)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.749958, 1, -9.776817)
 
 [node name="PlayerCamera" parent="Player" index="0" unique_id=762537571]
 transform = Transform3D(1, 0, 0, 0, 0.9757973, 0.21867694, 0, -0.21867694, 0.9757973, 0, 0.45875823, -0.23482275)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1753409437]
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=2098286076]
+data_directory = "res://TerrainData/Combat"
+material = SubResource("Terrain3DMaterial_vet15")
+assets = ExtResource("5_0dhp0")
 collision_layer = 2
 collision_mask = 0
+mesh_lods = 2
+top_level = true
+metadata/_edit_lock_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1209687567]
-shape = SubResource("BoxShape3D_rq8dt")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Terrain3D" unique_id=145532996]
+environment = ExtResource("6_k8hyy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1399044295]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.512272, 0)
-mesh = SubResource("BoxMesh_0dhp0")
+[node name="TreePurple" parent="." unique_id=2081053351 instance=ExtResource("7_vet15")]
+transform = Transform3D(-0.98310643, 0, 0.18303473, 0, 1, 0, -0.18303473, 0, -0.98310643, 15.925999, -9.536743e-07, -18.055067)
+
+[node name="TreePurple2" parent="." unique_id=975445658 instance=ExtResource("7_vet15")]
+transform = Transform3D(0.3084167, -1.3317912e-09, 1.3963448, 0.058746014, 1.4287338, -0.012975482, -1.3951086, 0.060161926, 0.30814362, 30.397823, -0.27826262, -19.27856)
+
+[node name="TreePurple3" parent="." unique_id=151574069 instance=ExtResource("7_vet15")]
+transform = Transform3D(0.96215826, -0.19969527, -1.0388807, 0.041359004, 1.4103184, -0.23278904, 1.0570909, 0.12658241, 0.9546915, 24.092182, -0.42459106, -24.586466)
 
 [editable path="Player"]
