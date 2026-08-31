@@ -13,12 +13,18 @@ albedo_color = Color(0.20784314, 0.8392157, 0.2784314, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_ggh84"]
 radius = 0.9646094
 
-[node name="Player" type="CharacterBody3D" unique_id=457108580]
+[node name="Player" type="CharacterBody3D" unique_id=457108580 groups=["Player"]]
 collision_mask = 2
 script = ExtResource("1_um8lo")
 combat_scene_path = "uid://blwyrjlch51ah"
 entity_name = "Player"
 max_health = 10
+
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875823, -0.23482281)
+
+[node name="VoodooDoll" parent="PlayerCamera" unique_id=1728398860 instance=ExtResource("2_x3d5u")]
+transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, -0.458758, -0.66295934)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1196226304]
 shape = SubResource("CapsuleShape3D_et8qu")
@@ -26,12 +32,6 @@ shape = SubResource("CapsuleShape3D_et8qu")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=745981496]
 mesh = SubResource("CapsuleMesh_et8qu")
 surface_material_override/0 = SubResource("StandardMaterial3D_4ynan")
-
-[node name="PlayerCamera" type="Camera3D" parent="." unique_id=762537571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875823, -0.23482281)
-
-[node name="VoodooDoll" parent="PlayerCamera" unique_id=1728398860 instance=ExtResource("2_x3d5u")]
-transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, -0.458758, -0.66295934)
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=300037680]
 collision_mask = 8

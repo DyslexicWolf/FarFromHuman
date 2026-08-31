@@ -26,3 +26,7 @@ shape = SubResource("BoxShape3D_ggh84")
 transform = Transform3D(1.2506309, 0, 0, 0, 2.3582015, 0, 0, 0, 1.2251284, 0, 0, 0)
 mesh = SubResource("BoxMesh_et8qu")
 surface_material_override/0 = SubResource("StandardMaterial3D_ggh84")
+
+[node name="HealthBar" type="TextureProgressBar" parent="." unique_id=1640370389]
+offset_right = 40.0
+offset_bottom = 40.0

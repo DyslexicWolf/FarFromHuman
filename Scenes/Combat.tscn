@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blwyrjlch51ah"]
 
 [ext_resource type="Script" uid="uid://nm3e0n2bfm6w" path="res://Scripts/CombatManager.gd" id="1_5y3t8"]
-[ext_resource type="PackedScene" uid="uid://dlptd6w0vca70" path="res://Prefabs/Enemy.tscn" id="2_jr68y"]
+[ext_resource type="PackedScene" uid="uid://cib3qpxxcra2o" path="res://Prefabs/Kitty/Kitty.tscn" id="2_rq8dt"]
 [ext_resource type="PackedScene" uid="uid://dr87qrlhbwf15" path="res://Prefabs/UI/CustomItemList.tscn" id="3_jr68y"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="4_rq8dt"]
 
@@ -15,8 +15,8 @@ size = Vector3(13.6796875, 1, 12.491211)
 script = ExtResource("1_5y3t8")
 game_scene_path = "uid://fdya7vaypamp"
 
-[node name="Enemy" parent="." unique_id=1323056336 instance=ExtResource("2_jr68y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1986997, 1.1484601, -5.2867475)
+[node name="Kitty" parent="." unique_id=898597057 instance=ExtResource("2_rq8dt")]
+transform = Transform3D(-0.37076795, 0, -0.9287255, 0, 1, 0, 0.9287255, 0, -0.37076795, 1.7461603, 9.536743e-07, -2.667097)
 
 [node name="CombatRewards" type="CanvasLayer" parent="." unique_id=408767344]
 layer = 10
