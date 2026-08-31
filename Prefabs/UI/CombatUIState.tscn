@@ -54,3 +54,24 @@ offset_left = 1659.0
 offset_top = 719.0
 offset_right = 1859.0
 offset_bottom = 1019.0
+
+[node name="ExplanationLabel" type="RichTextLabel" parent="." unique_id=1504718303]
+visible = false
+custom_maximum_size = Vector2(450, -1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 168.0
+offset_right = 20.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Here comes a popup text that gives an explanation to the player"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExplanationTimer" type="Timer" parent="ExplanationLabel" unique_id=942094702]
+wait_time = 1.25
+one_shot = true

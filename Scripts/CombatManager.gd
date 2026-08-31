@@ -27,6 +27,8 @@ var player_energy: PlayerEnergy
 var enemies: Array[Enemy] = []
 var lootable_card_array: Array[CardResource]
 var reward_claimed := false
+var explanation_label: RichTextLabel
+var explanation_timer: Timer
 
 @onready var combat_rewards: CanvasLayer = $CombatRewards
 @onready var custom_item_list: CustomItemList = $CombatRewards/CenterContainer/CustomItemList
@@ -48,6 +50,9 @@ func _ready() -> void:
 	player_hand = get_node("/root/PlayerUI/CombatUIState/PlayerHand")
 	end_turn_button = get_node("/root/PlayerUI/CombatUIState/EndTurnButton")
 	player_energy = get_node("/root/PlayerUI/CombatUIState/PlayerEnergy")
+	explanation_label = get_node("/root/PlayerUI/CombatUIState/ExplanationLabel")
+	explanation_timer = explanation_label.get_child(0)
+	explanation_timer.timeout.connect(on_explanation_timer_timeout)
 
 	player_hand.setup(self)
 	end_turn_button.pressed.connect(on_end_turn_pressed)
@@ -96,7 +101,18 @@ func reshuffle_discard_into_deck() -> void:
 
 
 func can_play_card(card: CardResource) -> bool:
-	return state == CombatState.PLAYER_TURN and current_energy >= card.energy_cost
+	if not state == CombatState.PLAYER_TURN:
+		explanation_label.text = "It is not your turn to play cards."
+		explanation_label.visible = true
+		explanation_timer.start()
+		return false
+	elif current_energy < card.energy_cost:
+		explanation_label.text = "You don't have enough energy to play this card."
+		explanation_label.visible = true
+		explanation_timer.start()
+		return false
+	else:
+		return true
 
 
 ##ATTEMPTS to play a card against a target. Returns true if it was played.
@@ -188,3 +204,7 @@ func on_enemy_death(enemy: Enemy) -> void:
 	if enemies.size() == 0:
 		show_combat_rewards()
 		print("Combat won.")
+
+
+func on_explanation_timer_timeout() -> void:
+	explanation_label.visible = false
