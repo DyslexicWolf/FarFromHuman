@@ -18,5 +18,5 @@ func _on_body_entered(body: Node3D) -> void:
 		return
 
 	transition_started = true
-	monitoring = false
+	set_deferred("montering", false)
 	SceneTransitionManager.change_scene(target_scene_path)

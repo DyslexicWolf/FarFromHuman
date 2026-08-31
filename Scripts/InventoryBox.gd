@@ -78,14 +78,12 @@ func on_mouse_entered() -> void:
 	if card_resource == null:
 		return
 
-	var card_cost := card_tooltip.get_node("MarginContainerCost/CardCost")
-	var card_name := card_tooltip.get_node("VBoxContainer/MarginContainerName/CardName")
-	var card_art := card_tooltip.get_node("VBoxContainer/MarginContainerArt/CardArt")
-	var card_explanation := card_tooltip.get_node(
-		"VBoxContainer/MarginContainerExplanation/CardExplanation"
-	)
-	var card_attack := card_tooltip.get_node("MarginContainerAttackstat/CardAttackstat")
-	var card_block := card_tooltip.get_node("MarginContainerBlockstat/CardBlockstat")
+	var card_cost := card_tooltip.get_node("CardCost")
+	var card_name := card_tooltip.get_node("VBoxContainer/CardName")
+	var card_art := card_tooltip.get_node("VBoxContainer/CardArt")
+	var card_explanation := card_tooltip.get_node("VBoxContainer/CardExplanation")
+	var card_attack := card_tooltip.get_node("CardAttackstat")
+	var card_block := card_tooltip.get_node("CardBlockstat")
 
 	card_cost.text = str(card_resource.energy_cost)
 	card_name.text = card_resource.card_name

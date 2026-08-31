@@ -1,100 +1,115 @@
 [gd_scene format=3 uid="uid://b5dgysfbqkqbf"]
 
+[ext_resource type="Texture2D" uid="uid://b2kseuohe61js" path="res://Textures/BaseCard2D/T_CardBackground.png" id="1_ikmy7"]
 [ext_resource type="Script" uid="uid://b5isxkpv22qxh" path="res://Scripts/KeywordLabel.gd" id="1_otvxw"]
+[ext_resource type="Texture2D" uid="uid://ysqk7hihsad1" path="res://Textures/BaseCard2D/T_NormalLeg.png" id="1_rh1dh"]
+[ext_resource type="Texture2D" uid="uid://bs0v661nb25v4" path="res://Textures/BaseCard2D/T_EnergySymbol.png" id="2_lh5cx"]
+[ext_resource type="Texture2D" uid="uid://bvxdrbl046ass" path="res://Textures/BaseCard2D/T_AttackSymbol.png" id="3_rh1dh"]
+[ext_resource type="Texture2D" uid="uid://cmnp26r68vc8x" path="res://Textures/BaseCard2D/T_BlockSymbol.png" id="4_ikmy7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh1dh"]
+texture = ExtResource("1_ikmy7")
 
 [node name="CardTooltip" type="PanelContainer" unique_id=781376861]
-custom_minimum_size = Vector2(200, 300)
-
-[node name="MarginContainerCost" type="MarginContainer" parent="." unique_id=1335394799]
-custom_minimum_size = Vector2(25, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="CardCost" type="RichTextLabel" parent="MarginContainerCost" unique_id=1803747534]
-layout_mode = 2
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
+custom_minimum_size = Vector2(300, 400)
+theme_override_styles/panel = SubResource("StyleBoxTexture_rh1dh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1247884716]
 layout_mode = 2
 
-[node name="MarginContainerName" type="MarginContainer" parent="VBoxContainer" unique_id=1159656027]
-custom_minimum_size = Vector2(225, 0)
+[node name="CardName" type="RichTextLabel" parent="VBoxContainer" unique_id=1201176753]
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(-1, 70)
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="CardName" type="RichTextLabel" parent="VBoxContainer/MarginContainerName" unique_id=1841346496]
-layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "ExampleName"
 fit_content = true
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 
-[node name="MarginContainerArt" type="MarginContainer" parent="VBoxContainer" unique_id=307833889]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="CardArt" type="TextureRect" parent="VBoxContainer/MarginContainerArt" unique_id=1981091665]
+[node name="CardArt" type="TextureRect" parent="VBoxContainer" unique_id=1981091665]
+custom_maximum_size = Vector2(200, 225)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-stretch_mode = 2
+texture = ExtResource("1_rh1dh")
 
-[node name="MarginContainerExplanation" type="MarginContainer" parent="VBoxContainer" unique_id=1306033757]
+[node name="CardExplanation" type="RichTextLabel" parent="VBoxContainer" unique_id=1080960159]
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="CardExplanation" type="RichTextLabel" parent="VBoxContainer/MarginContainerExplanation" unique_id=1861598540]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Here comes the explanation if an attack or block moves does something special"
 fit_content = true
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 script = ExtResource("1_otvxw")
 
-[node name="MarginContainerAttackstat" type="MarginContainer" parent="." unique_id=1163140351]
-custom_minimum_size = Vector2(25, 0)
+[node name="CostTexture" type="TextureRect" parent="." unique_id=681892764]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("2_lh5cx")
 
-[node name="CardAttackstat" type="RichTextLabel" parent="MarginContainerAttackstat" unique_id=256481586]
+[node name="CardCost" type="RichTextLabel" parent="." unique_id=2077597573]
+custom_minimum_size = Vector2(56, 74)
+custom_maximum_size = Vector2(64, 74)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "1"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainerBlockstat" type="MarginContainer" parent="." unique_id=506469332]
-custom_minimum_size = Vector2(25, 0)
+[node name="AttackTexture" type="TextureRect" parent="." unique_id=1844097645]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("3_rh1dh")
+
+[node name="CardAttackstat" type="RichTextLabel" parent="." unique_id=1202556722]
+custom_minimum_size = Vector2(66, 58)
+custom_maximum_size = Vector2(66, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "1"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlockTexture" type="TextureRect" parent="." unique_id=895861158]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+texture = ExtResource("4_ikmy7")
 
-[node name="CardBlockstat" type="RichTextLabel" parent="MarginContainerBlockstat" unique_id=321701686]
+[node name="CardBlockstat" type="RichTextLabel" parent="." unique_id=2102431261]
+custom_minimum_size = Vector2(60, 54)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "1"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
