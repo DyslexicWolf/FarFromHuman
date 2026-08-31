@@ -17,6 +17,20 @@ var _transition_effect_parameter_call: Variant = func(value: float) -> void:
 		min(1.0, abs(-4.0 + value * 8.0)) * 0.48,
 	)
 
+var combat_return_scene_path: String
+
+func start_combat(combat_scene_path: String) -> void:
+	combat_return_scene_path = get_tree().current_scene.scene_file_path
+	change_scene(combat_scene_path)
+
+
+func return_from_combat() -> void:
+	if combat_return_scene_path.is_empty():
+		push_warning("No combat return scene was registered.")
+		return
+
+	change_scene(combat_return_scene_path)
+
 
 func _ready() -> void:
 	get_tree().scene_changed.connect(on_scene_changed)

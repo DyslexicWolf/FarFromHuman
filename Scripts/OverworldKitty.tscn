@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b6hvc33i1e838"]
+
+[ext_resource type="PackedScene" uid="uid://bcxlwd2veue2f" path="res://Prefabs/Kitty/CHAR_Kitty.glb" id="1_i43cu"]
+[ext_resource type="Script" uid="uid://uv0d80wemydc" path="res://Scripts/OverworldEnemy.gd" id="1_kt23h"]
+[ext_resource type="Material" uid="uid://kjtddonujq6h" path="res://Prefabs/Kitty/MAT_Kitty.tres" id="3_h2pek"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h7j7m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1plxn"]
+
+[node name="OverworldKitty" type="CharacterBody3D" unique_id=1004627182]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_kt23h")
+combat_scene_path = "uid://blwyrjlch51ah"
+
+[node name="CHAR_Kitty" parent="." unique_id=887496204 instance=ExtResource("1_i43cu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.16575944, 0, 0.15349722)
+
+[node name="DM_Kitty" parent="CHAR_Kitty" index="0" unique_id=1855553330]
+material_override = ExtResource("3_h2pek")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1656957310]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("SphereShape3D_h7j7m")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1312386188]
+path_desired_distance = 0.4
+target_desired_distance = 0.6
+
+[node name="EncounterArea" type="Area3D" parent="." unique_id=1437071868]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EncounterArea" unique_id=676816655]
+shape = SubResource("SphereShape3D_1plxn")
+
+[node name="RoamTimer" type="Timer" parent="." unique_id=456341815]
+one_shot = true
+
+[editable path="CHAR_Kitty"]

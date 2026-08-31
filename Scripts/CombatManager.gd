@@ -172,7 +172,7 @@ func end_combat() -> void:
 			child.transitioned.emit(child, "IdleUIState")
 			break
 	PlayerUI.in_combat = false
-	SceneTransitionManager.change_scene(game_scene_path)
+	SceneTransitionManager.return_from_combat()
 
 
 func show_combat_rewards() -> void:
