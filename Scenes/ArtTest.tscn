@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Green/Tree.tscn" id="4_wc6fi"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
 [ext_resource type="PackedScene" uid="uid://crs34cb0twcji" path="res://Prefabs/Rock/Rock.tscn" id="6_xo2t3"]
+[ext_resource type="PackedScene" uid="uid://bukd03xr7lt7k" path="res://Prefabs/SignBoard.tscn" id="7_emnsf"]
+[ext_resource type="Script" path="res://Scripts/SceneTransitionArea3D.gd" id="8_transition"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
 
@@ -15,6 +17,9 @@ albedo = Color(0.34117648, 1, 1, 1)
 emission = Color(0.9577182, 0.9577182, 0.9577181, 1)
 height_falloff = 0.00019698252
 edge_fade = 0.0034970657
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fog_transition"]
+size = Vector3(32.01184, 18.111969, 17.08899)
 
 [node name="ArtTest" type="Node3D" unique_id=1660056797]
 
@@ -46,6 +51,16 @@ size = Vector3(32.01184, 18.111969, 17.08899)
 shape = 0
 material = SubResource("FogMaterial_u6hvw")
 
+[node name="PurpleForestTransition" type="Area3D" parent="."]
+transform = Transform3D(0.85986125, 0, -0.5105278, 0, 1, 0, 0.5105278, 0, 0.85986125, 137.84181, 19.60107, 195.34433)
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("8_transition")
+target_scene_path = "uid://c6cdfynrkghon"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PurpleForestTransition"]
+shape = SubResource("BoxShape3D_fog_transition")
+
 [node name="Tree" parent="." unique_id=2081053351 instance=ExtResource("4_wc6fi")]
 transform = Transform3D(0.23759478, 0, 0.9713644, 0, 1, 0, -0.9713644, 0, 0.23759478, 122.65802, 0.8600979, 120.78951)
 
@@ -60,3 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39942, 3.2864642, 125.125
 
 [node name="Rock" parent="." unique_id=1065965341 instance=ExtResource("6_xo2t3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.30575, 0.84706867, 118.5947)
+
+[node name="SignBoard" parent="." unique_id=1669580253 instance=ExtResource("7_emnsf")]
+transform = Transform3D(0.46536845, 0, 0.88511705, 0, 1, 0, -0.88511705, 0, 0.46536845, 142.6252, 1.5405862, 125.45454)

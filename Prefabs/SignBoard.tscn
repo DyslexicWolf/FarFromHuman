@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bukd03xr7lt7k"]
+
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="1_actionable"]
+[ext_resource type="Script" uid="uid://2g13yml4shd8" path="res://Scripts/NPC.gd" id="2_npc"]
+[ext_resource type="Resource" uid="uid://crw6tstav1c85" path="res://Dialogue/SignBoardDialogue.dialogue" id="3_dialogue"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_interaction"]
+size = Vector3(4, 2.5, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_board"]
+size = Vector3(2.4, 1.2, 0.18)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_placeholder"]
+albedo_color = Color(0.32, 0.17, 0.07, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_post"]
+size = Vector3(0.18, 2, 0.18)
+
+[node name="SignBoard" type="Node3D" unique_id=1416800949]
+script = ExtResource("2_npc")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=1534692424]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_actionable")
+dialogue_resource = ExtResource("3_dialogue")
+dialogue_cue = "start"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1329665930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_interaction")
+
+[node name="PlaceholderBoard" type="MeshInstance3D" parent="." unique_id=1706053561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("BoxMesh_board")
+surface_material_override/0 = SubResource("StandardMaterial3D_placeholder")
+
+[node name="PlaceholderPost" type="MeshInstance3D" parent="." unique_id=1515393295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_post")
+surface_material_override/0 = SubResource("StandardMaterial3D_placeholder")
