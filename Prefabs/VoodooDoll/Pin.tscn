@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ck8ksttwu2ux4"]
+
+[ext_resource type="PackedScene" uid="uid://cdhr724u066m7" path="res://Prefabs/VoodooDoll/SM_Pin.glb" id="1_87huo"]
+[ext_resource type="Material" uid="uid://dr3tqu48fh1kj" path="res://Materials/MAT_VoodooDoll.tres" id="2_1fvif"]
+
+[node name="Pin" type="Node3D" unique_id=1487115842]
+
+[node name="SM_Pin" parent="." unique_id=17749870 instance=ExtResource("1_87huo")]
+
+[node name="Cone" parent="SM_Pin" index="0" unique_id=1576712252]
+surface_material_override/0 = ExtResource("2_1fvif")
+
+[editable path="SM_Pin"]

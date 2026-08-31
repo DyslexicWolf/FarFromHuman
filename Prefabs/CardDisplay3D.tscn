@@ -4,10 +4,16 @@
 [ext_resource type="Script" uid="uid://c0s6goeowqe1g" path="res://Scripts/CardDisplay3D.gd" id="1_r8e1w"]
 [ext_resource type="PackedScene" uid="uid://wa4s51esqmmv" path="res://Models/SM_Card3D.fbx" id="3_p4rfa"]
 
-[node name="CardDisplay3D" type="Node3D" unique_id=1127104588]
+[sub_resource type="BoxShape3D" id="BoxShape3D_et8qu"]
+size = Vector3(0.059570313, 0.00390625, 0.07714844)
+
+[node name="CardDisplay3D" type="RigidBody3D" unique_id=657398745]
 script = ExtResource("1_r8e1w")
 
 [node name="SM_Card3D" parent="." unique_id=252538377 instance=ExtResource("3_p4rfa")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=500774881]
+shape = SubResource("BoxShape3D_et8qu")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1419876295]
 transparent_bg = true

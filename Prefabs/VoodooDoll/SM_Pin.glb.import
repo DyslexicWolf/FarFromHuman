@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cdhr724u066m7"
-path="res://.godot/imported/SM_Pin.glb-c0d73abf2bc2b34d5b55aed25fe9b5cf.scn"
+path="res://.godot/imported/SM_Pin.glb-b15163c4ce7640445f52502d64a0d7c3.scn"
 
 [deps]
 
-source_file="res://Models/SM_Pin.glb"
-dest_files=["res://.godot/imported/SM_Pin.glb-c0d73abf2bc2b34d5b55aed25fe9b5cf.scn"]
+source_file="res://Prefabs/VoodooDoll/SM_Pin.glb"
+dest_files=["res://.godot/imported/SM_Pin.glb-b15163c4ce7640445f52502d64a0d7c3.scn"]
 
 [params]
 
