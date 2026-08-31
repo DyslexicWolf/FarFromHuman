@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dssdpercaymvm"
-path="res://.godot/imported/T_CardBackground2.png-77fb434807489f29807351101ae834d0.ctex"
+uid="uid://cmnp26r68vc8x"
+path="res://.godot/imported/T_BlockSymbol.png-54454ec685ad22dad607de3ddcd97655.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_CardBackground2.png"
-dest_files=["res://.godot/imported/T_CardBackground2.png-77fb434807489f29807351101ae834d0.ctex"]
+source_file="res://Textures/BaseCard2D/T_BlockSymbol.png"
+dest_files=["res://.godot/imported/T_BlockSymbol.png-54454ec685ad22dad607de3ddcd97655.ctex"]
 
 [params]
 

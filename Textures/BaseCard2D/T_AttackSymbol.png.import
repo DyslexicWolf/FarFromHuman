@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nteglrymm23"
-path="res://.godot/imported/T_NormalHead.png-5f78c9ea01857ba7e1ab3333271def57.ctex"
+uid="uid://bvxdrbl046ass"
+path="res://.godot/imported/T_AttackSymbol.png-8df298b3d63ae17530f06d05665bd1fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_NormalHead.png"
-dest_files=["res://.godot/imported/T_NormalHead.png-5f78c9ea01857ba7e1ab3333271def57.ctex"]
+source_file="res://Textures/BaseCard2D/T_AttackSymbol.png"
+dest_files=["res://.godot/imported/T_AttackSymbol.png-8df298b3d63ae17530f06d05665bd1fd.ctex"]
 
 [params]
 
