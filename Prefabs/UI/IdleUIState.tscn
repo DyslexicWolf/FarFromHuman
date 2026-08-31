@@ -4,11 +4,3 @@
 
 [node name="IdleUIState" type="CanvasLayer" unique_id=632195232]
 script = ExtResource("1_h3eiu")
-
-[node name="TempLabel" type="Label" parent="." unique_id=503949541]
-offset_left = 801.0
-offset_top = 24.0
-offset_right = 1045.0
-offset_bottom = 73.0
-theme_override_font_sizes/font_size = 35
-text = "In UI idle state"
