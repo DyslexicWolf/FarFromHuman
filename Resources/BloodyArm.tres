@@ -11,6 +11,6 @@ attack_damage = 0
 block_amount = 3
 energy_cost = 2
 explanation = "An attack that inflicts weakness on the target."
-body_part_type = 2
+body_part_type = 3
 weakness_amount = 1
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"

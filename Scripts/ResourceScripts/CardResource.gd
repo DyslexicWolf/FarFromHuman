@@ -4,9 +4,11 @@ extends Resource
 
 enum BodyPartType {
 	HEAD,
-	BODY,
-	ARM,
-	LEG,
+	TORSO,
+	LEFT_ARM,
+	RIGHT_ARM,
+	LEFT_LEG,
+	RIGHT_LEG,
 }
 
 ##Standard card variables that NEED to be filled in for a card to function.
