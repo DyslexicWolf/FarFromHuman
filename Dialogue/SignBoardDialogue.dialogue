@@ -1,0 +1,7 @@
+~ start
+Sign Board: The sign points toward the Purple Forest.
+- Go to the Purple Forest
+	do SceneTransitionManager.change_scene("res://Scenes/PurpleForest.tscn")
+	=> END
+- Stop talking => END
+

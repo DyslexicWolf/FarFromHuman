@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Green/Tree.tscn" id="4_wc6fi"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
 [ext_resource type="PackedScene" uid="uid://crs34cb0twcji" path="res://Prefabs/Rock/Rock.tscn" id="6_xo2t3"]
+[ext_resource type="PackedScene" path="res://Prefabs/SignBoard.tscn" id="7_emnsf"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
 
@@ -60,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39942, 3.2864642, 125.125
 
 [node name="Rock" parent="." unique_id=1065965341 instance=ExtResource("6_xo2t3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.30575, 0.84706867, 118.5947)
+
+[node name="SignBoard" parent="." unique_id=1669580253 instance=ExtResource("7_emnsf")]
+transform = Transform3D(0.46536845, 0, 0.88511705, 0, 1, 0, -0.88511705, 0, 0.46536845, 142.6252, 1.5405862, 125.45454)
