@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dy0dx57jmgbor"]
+
+[ext_resource type="Texture2D" uid="uid://21mymj2cl8yj" path="res://Textures/Nature/Purple/T_Bark.png" id="1_01noh"]
+
+[resource]
+albedo_texture = ExtResource("1_01noh")
+texture_filter = 2

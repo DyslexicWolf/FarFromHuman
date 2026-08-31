@@ -6,6 +6,7 @@
 background_mode = 2
 sky = ExtResource("1_ke3dw")
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0205
+volumetric_fog_density = 0.0146
 volumetric_fog_albedo = Color(0.44980407, 0.3645923, 0.7663934, 1)
-volumetric_fog_emission = Color(0.28778407, 0.28778407, 0.28778407, 1)
+volumetric_fog_emission = Color(0.07510059, 0.096876435, 0.25638264, 1)
+volumetric_fog_emission_energy = 15.11

@@ -36,7 +36,7 @@ material = ExtResource("1_c0a7e")
 assets = ExtResource("2_vsrlw")
 collision_layer = 2
 collision_mask = 0
-mesh_lods = 4
+mesh_lods = 2
 top_level = true
 metadata/_edit_lock_ = true
 

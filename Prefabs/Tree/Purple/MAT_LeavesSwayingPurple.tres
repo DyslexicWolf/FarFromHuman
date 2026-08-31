@@ -1,15 +1,13 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dep0njcp1wpsf"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c7dkomayxr18j"]
 
-[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/Green/SH_Leaves.gdshader" id="1_1gl3f"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1qg3"]
-load_path = "res://.godot/imported/T_Leaves.png-2c2b164f85f268aba09f9176b4942f6a.s3tc.ctex"
+[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/Green/SH_Leaves.gdshader" id="1_t3rbs"]
+[ext_resource type="Texture2D" uid="uid://cs2vvejkjj6ue" path="res://Textures/Nature/Purple/T_Leaves.png" id="2_y3baw"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_1gl3f")
+shader = ExtResource("1_t3rbs")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = SubResource("CompressedTexture2D_x1qg3")
+shader_parameter/texture_albedo = ExtResource("2_y3baw")
 shader_parameter/alpha_scissor_threshold = 0.585
 shader_parameter/albedo_texture_size = Vector2i(128, 128)
 shader_parameter/point_size = 1.0

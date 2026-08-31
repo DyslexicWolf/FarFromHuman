@@ -3,6 +3,8 @@
 [ext_resource type="Terrain3DMaterial" uid="uid://bc63x8t54jo3i" path="res://TerrainData/PurpleForest/purpleforest_3d_material.tres" id="1_pcl2r"]
 [ext_resource type="Terrain3DAssets" uid="uid://c31xw0aehcdl7" path="res://TerrainData/PurpleForest/purpleforest_3d_assets.tres" id="2_s0bd2"]
 [ext_resource type="Environment" uid="uid://bv7vwy723b66w" path="res://TerrainData/PurpleForest/purple_environment.tres" id="3_s0bd2"]
+[ext_resource type="PackedScene" uid="uid://cb0o6hamff0fq" path="res://Prefabs/Tree/Purple/TreePurple.tscn" id="4_5mh45"]
+[ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_bhi5t"]
 
 [node name="PurpleForest" type="Node3D" unique_id=133502128]
 
@@ -10,6 +12,8 @@
 data_directory = "res://TerrainData/PurpleForest"
 material = ExtResource("1_pcl2r")
 assets = ExtResource("2_s0bd2")
+collision_layer = 2
+collision_mask = 0
 top_level = true
 metadata/_edit_lock_ = true
 
@@ -21,3 +25,12 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Terrain3D" unique_id=732612302]
 environment = ExtResource("3_s0bd2")
+
+[node name="TreePurple" parent="Terrain3D" unique_id=2081053351 instance=ExtResource("4_5mh45")]
+transform = Transform3D(0.08541103, 0, 0.9963458, 0, 1, 0, -0.9963458, 0, 0.08541103, 57.17724, 32.980495, 155.1962)
+
+[node name="TreePurple" parent="." unique_id=712281080 instance=ExtResource("4_5mh45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.06858, 35.858494, 181.90082)
+
+[node name="Player" parent="." unique_id=457108580 instance=ExtResource("5_bhi5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.941525, 36.470295, 162.89789)

@@ -38,7 +38,7 @@ name = "Grass"
 albedo_texture = ExtResource("1_vhbmk")
 normal_texture = SubResource("ImageTexture_1jgfp")
 roughness = 1.0
-uv_scale = 0.339
+uv_scale = 1.391
 detiling_rotation = 0.265
 detiling_shift = 0.21
 
@@ -60,7 +60,7 @@ id = 1
 albedo_texture = ExtResource("2_haxa5")
 normal_texture = SubResource("ImageTexture_e6n7w")
 roughness = 1.0
-uv_scale = 0.23
+uv_scale = 0.134
 
 [resource]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_bhi5t")])
