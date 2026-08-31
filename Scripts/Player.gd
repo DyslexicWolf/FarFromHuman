@@ -150,6 +150,28 @@ func update_head_bobble(delta: float) -> void:
 	player_camera.position = camera_base_position + Vector3(horizontal_offset, vertical_offset, 0.0)
 
 
+func take_damage(damage_amount: int) -> void:
+	current_health = max(0, current_health - damage_amount)
+
+	var text_to_print: String = "{0} took {1} damage".format([entity_name, damage_amount])
+	print(text_to_print)
+
+	var particle_instance := BLOOD_PARTICLES.instantiate()
+	particle_instance.position = player_camera.get_child(0).global_position
+	get_tree().root.add_child(particle_instance)
+
+
+func receive_block(block_amount: int) -> void:
+	current_block += block_amount
+
+	var text_to_print: String = "{0} received {1} block".format([entity_name, block_amount])
+	print(text_to_print)
+
+	var particle_instance := BLOCK_PARTICLES.instantiate()
+	particle_instance.position = player_camera.get_child(0).global_position
+	get_tree().root.add_child(particle_instance)
+
+
 func on_ui_changed(new_ui_state: State) -> void:
 	if new_ui_state.name == "IdleUIState":
 		in_ui_idle_state = true

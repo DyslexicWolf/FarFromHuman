@@ -83,4 +83,6 @@ func find_target_under_mouse() -> Entity:
 	var collider: Object = result.get("collider")
 	if collider is Entity:
 		return collider
+	elif collider is VoodooDoll:
+		return collider.get_parent().get_parent()
 	return null

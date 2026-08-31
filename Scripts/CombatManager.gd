@@ -165,8 +165,7 @@ func show_combat_rewards() -> void:
 
 
 func on_reward_selected(card: CardResource) -> void:
-	if reward_claimed:
-		return
+	combat_rewards.visible = false
 
 	var inventory_panel := get_node_or_null("/root/PlayerUI/InventoryState/Panel/InventoryPanel")
 	if inventory_panel == null:

@@ -1,18 +1,20 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dujrq6qjodoki"]
 
-[ext_resource type="Script" path="res://Scripts/RewardBox.gd" id="1_reward"]
+[ext_resource type="Script" uid="uid://b56v32e0d4sqw" path="res://Scripts/RewardBox.gd" id="1_reward"]
 [ext_resource type="Texture2D" uid="uid://b7fntpjepnvc8" path="res://Textures/T_TempFrame.png" id="2_frame"]
 
-[node name="RewardBox" type="Button" node_paths=PackedStringArray("card_texture")]
+[node name="RewardBox" type="Control" unique_id=2115388423 node_paths=PackedStringArray("card_texture")]
 custom_minimum_size = Vector2(135, 135)
 custom_maximum_size = Vector2(135, 135)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 135.0
+offset_bottom = 135.0
 mouse_default_cursor_shape = 2
-flat = true
 script = ExtResource("1_reward")
 card_texture = NodePath("CardTexture")
 
-[node name="CardTexture" type="TextureRect" parent="."]
-mouse_filter = 2
+[node name="CardTexture" type="TextureRect" parent="." unique_id=791172371]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,15 +25,16 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="FrameTexture" type="TextureRect" parent="."]
-mouse_filter = 2
+[node name="FrameTexture" type="TextureRect" parent="." unique_id=2096606092]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_frame")
