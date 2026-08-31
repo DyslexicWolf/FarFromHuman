@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://cchfvmc0bq2ke" path="res://Scripts/StateMachine/CombatUIState.gd" id="1_iad1y"]
 [ext_resource type="PackedScene" uid="uid://dfx7ouuyw7sy3" path="res://Prefabs/UI/TargetingArrow.tscn" id="2_5e7ia"]
 [ext_resource type="Script" uid="uid://b4sv2axuupu3w" path="res://Scripts/PlayerHand.gd" id="2_ielgo"]
-[ext_resource type="Script" uid="uid://dogguqdb1qpt2" path="res://Scripts/PlayerEnergy.gd" id="4_kxsn1"]
-[ext_resource type="PackedScene" uid="uid://crp0kpixatl78" path="res://Prefabs/UI/PlayerDeck.tscn" id="5_4oql3"]
+[ext_resource type="Texture2D" uid="uid://bs0v661nb25v4" path="res://Textures/BaseCard2D/T_EnergySymbol.png" id="5_xko20"]
 [ext_resource type="PackedScene" uid="uid://bh2c1rs01aflc" path="res://Prefabs/UI/DiscardPile.tscn" id="6_l85cu"]
+[ext_resource type="PackedScene" uid="uid://jms27n0gbn3h" path="res://Prefabs/UI/CardDisplay2D.tscn" id="6_xko20"]
 
 [node name="CombatUIState" type="CanvasLayer" unique_id=761821837]
 script = ExtResource("1_iad1y")
 
 [node name="TargetingArrow" parent="." unique_id=543636879 instance=ExtResource("2_5e7ia")]
 
-[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile", "deck_pile")]
+[node name="PlayerHand" type="Control" parent="." unique_id=457396667 node_paths=PackedStringArray("targeting_arrow", "discard_pile")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,14 @@ grow_vertical = 2
 script = ExtResource("2_ielgo")
 targeting_arrow = NodePath("../TargetingArrow")
 discard_pile = NodePath("../DiscardPile")
-deck_pile = NodePath("../PlayerDeck")
+
+[node name="CardDisplay2D" parent="PlayerHand" unique_id=655306505 instance=ExtResource("6_xko20")]
+visible = false
+layout_mode = 0
+offset_left = 46.0
+offset_top = 713.0
+offset_right = 271.0
+offset_bottom = 1013.0
 
 [node name="EndTurnButton" type="Button" parent="." unique_id=675044041]
 offset_left = 1670.0
@@ -32,22 +39,25 @@ offset_bottom = 692.0
 theme_override_font_sizes/font_size = 40
 text = "End Turn"
 
+[node name="PlayerEnergySymbol" type="TextureRect" parent="." unique_id=1427118940]
+custom_maximum_size = Vector2(96, 96)
+offset_left = 100.0
+offset_top = 706.0
+offset_right = 164.0
+offset_bottom = 770.0
+texture = ExtResource("5_xko20")
+
 [node name="PlayerEnergy" type="RichTextLabel" parent="." unique_id=1918702236]
-offset_left = 69.0
-offset_top = 643.0
-offset_right = 257.0
-offset_bottom = 692.0
-theme_override_font_sizes/normal_font_size = 35
-text = "Energy: 3/3"
+offset_left = 36.0
+offset_top = 715.0
+offset_right = 120.0
+offset_bottom = 791.0
+theme_override_font_sizes/normal_font_size = 45
+text = "3/3"
 fit_content = true
 autowrap_mode = 0
-script = ExtResource("4_kxsn1")
-
-[node name="PlayerDeck" parent="." unique_id=1680035419 instance=ExtResource("5_4oql3")]
-offset_left = 60.0
-offset_top = 718.0
-offset_right = 260.0
-offset_bottom = 1018.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DiscardPile" parent="." unique_id=2084936583 instance=ExtResource("6_l85cu")]
 offset_left = 1659.0

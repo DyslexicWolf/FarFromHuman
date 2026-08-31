@@ -22,7 +22,7 @@ var card_display_scene: CardDisplay2D
 
 
 func _ready() -> void:
-	card_display_scene = get_node("/root/PlayerUI/CombatUIState/PlayerDeck/CardDisplay")
+	card_display_scene = get_node("/root/PlayerUI/CombatUIState/PlayerHand/CardDisplay2D")
 
 
 ##Should be called at the start of combat.
@@ -114,21 +114,20 @@ func tween_to_hand(
 	if card_display.active_tween:
 		card_display.active_tween.kill()
 
-	var duration := tween_duration
 	if from_deck and deck_pile:
 		card_display.global_position = (
 			deck_pile.global_position + deck_pile.size / 2.0 - card_display.size / 2.0
 		)
 		card_display.rotation = 0.0
 		card_display.scale = Vector2.ONE * base_card_scale
-		duration = tween_duration * 2.5
 
+	var fly_duration := tween_duration * 2.5
 	var tween := create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(
 		Tween.EASE_OUT
 	)
-	tween.tween_property(card_display, "position", pos, duration)
-	tween.tween_property(card_display, "rotation", rot, duration)
-	tween.tween_property(card_display, "scale", Vector2.ONE * scaling, duration)
+	tween.tween_property(card_display, "position", pos, fly_duration)
+	tween.tween_property(card_display, "rotation", rot, fly_duration)
+	tween.tween_property(card_display, "scale", Vector2.ONE * scaling, fly_duration)
 	card_display.active_tween = tween
 
 
