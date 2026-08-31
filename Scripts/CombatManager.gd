@@ -1,7 +1,6 @@
 class_name CombatManager
 extends Node
 
-signal energy_changed(current: int, max: int)
 signal played_card(played_card: CardResource)
 signal received_new_hand()
 signal turn_changed(new_state: CombatState)
@@ -23,7 +22,7 @@ var hand_pile: Array[CardResource] = []
 var discard_pile: Array[CardResource] = []
 var player_hand: PlayerHand
 var end_turn_button: Button
-var player_energy: PlayerEnergy
+var player_energy: RichTextLabel
 var enemies: Array[Enemy] = []
 var lootable_card_array: Array[CardResource]
 var reward_claimed := false
@@ -56,7 +55,6 @@ func _ready() -> void:
 
 	player_hand.setup(self)
 	end_turn_button.pressed.connect(on_end_turn_pressed)
-	energy_changed.connect(player_energy.on_player_energy_changed)
 	custom_item_list.reward_selected.connect(on_reward_selected)
 	build_deck_from_inventory()
 	deck_pile.shuffle()
@@ -79,7 +77,7 @@ func start_player_turn() -> void:
 	state = CombatState.PLAYER_TURN
 	turn_changed.emit(state)
 	current_energy = max_energy
-	energy_changed.emit(current_energy, max_energy)
+	player_energy.text = "{0}".format([current_energy])
 	print("is players turn")
 	draw_up_to_hand_size()
 
@@ -126,7 +124,8 @@ func play_card(card: CardResource, target: Entity) -> bool:
 	hand_pile.remove_at(idx)
 	discard_pile.append(card)
 	current_energy -= card.energy_cost
-	energy_changed.emit(current_energy, max_energy)
+	player_energy.text = "{0}".format([current_energy])
+
 	played_card.emit(card)
 	if target is Enemy:
 		target.take_damage(card.attack_damage)

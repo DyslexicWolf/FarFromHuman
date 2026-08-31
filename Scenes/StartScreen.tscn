@@ -44,12 +44,31 @@ layout_mode = 2
 [node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1595773844]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=459619810]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 48
 text = "Quit Game
 "
+
+[node name="TitleText" type="RichTextLabel" parent="." unique_id=1442024068]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 178.0
+offset_right = 224.0
+offset_bottom = 254.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "Far From Human"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

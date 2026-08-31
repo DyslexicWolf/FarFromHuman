@@ -31,8 +31,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24560547, 0.85266113, 0)
 shape = SubResource("BoxShape3D_et8qu")
 
 [node name="HealthBar" type="TextureProgressBar" parent="." unique_id=313884985]
-offset_right = 1024.0
-offset_bottom = 101.0
+offset_right = 510.0
+offset_bottom = 50.0
 value = 100.0
 texture_under = ExtResource("4_s4dm6")
 texture_progress = ExtResource("5_vrtnv")

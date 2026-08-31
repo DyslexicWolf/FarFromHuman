@@ -3,16 +3,18 @@ extends Control
 
 @export var targeting_arrow: TargetingArrow
 @export var discard_pile: Control
-@export var deck_pile: Control
+@export var voodoo_doll_position: Control
 @export var min_fan_radius: float = 1000.0
 @export var max_fan_radius: float = 1200.0
-@export var full_fan_card_count: int = 8
-@export var max_fan_angle_degrees: float = 34.0
-@export var hover_raise: float = 60.0
+@export var full_fan_card_count: int = 6
+@export var max_fan_angle_degrees: float = 40.0
+##How much a card gets raised when it is hovered.
+@export var hover_raise: float = 100.0
 @export var base_card_scale: float = 1.0
 @export var hover_card_scale: float = 1.12
 @export var tween_duration: float = 0.15
-@export var card_hand_y_offset: float = 175.0
+##How far up the cards of the player's hand are displayed from the bottom.
+@export var card_hand_y_offset: float = 200.0
 
 var combat_manager: CombatManager
 var card_nodes: Array[CardDisplay2D] = []
@@ -22,7 +24,7 @@ var card_display_scene: CardDisplay2D
 
 
 func _ready() -> void:
-	card_display_scene = get_node("/root/PlayerUI/CombatUIState/PlayerDeck/CardDisplay")
+	card_display_scene = get_node("/root/PlayerUI/CombatUIState/PlayerHand/CardDisplay2D")
 
 
 ##Should be called at the start of combat.
@@ -114,21 +116,21 @@ func tween_to_hand(
 	if card_display.active_tween:
 		card_display.active_tween.kill()
 
-	var duration := tween_duration
-	if from_deck and deck_pile:
+	if from_deck and voodoo_doll_position:
 		card_display.global_position = (
-			deck_pile.global_position + deck_pile.size / 2.0 - card_display.size / 2.0
+			voodoo_doll_position.global_position + voodoo_doll_position.size / 2.0
+			- card_display.size / 2.0
 		)
 		card_display.rotation = 0.0
 		card_display.scale = Vector2.ONE * base_card_scale
-		duration = tween_duration * 2.5
 
+	var fly_duration := tween_duration * 2.5
 	var tween := create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(
 		Tween.EASE_OUT
 	)
-	tween.tween_property(card_display, "position", pos, duration)
-	tween.tween_property(card_display, "rotation", rot, duration)
-	tween.tween_property(card_display, "scale", Vector2.ONE * scaling, duration)
+	tween.tween_property(card_display, "position", pos, fly_duration)
+	tween.tween_property(card_display, "rotation", rot, fly_duration)
+	tween.tween_property(card_display, "scale", Vector2.ONE * scaling, fly_duration)
 	card_display.active_tween = tween
 
 

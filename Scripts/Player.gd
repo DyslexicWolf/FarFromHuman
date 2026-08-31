@@ -53,6 +53,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if not in_ui_idle_state:
+		return
 	if event.is_action_pressed("CombatTest"):
 		SceneTransitionManager.change_scene(combat_scene_path)
 	
@@ -68,10 +70,7 @@ func _input(event: InputEvent) -> void:
 			PlayerUI.on_child_transitioned(PlayerUI.current_state, "DialogueUIState")
 			current_dialogue_actionable.action()
 	
-	
-	if not in_ui_idle_state:
-		return
-	elif event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		player_camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		player_camera.rotation.x = clamp(

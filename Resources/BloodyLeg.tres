@@ -10,5 +10,6 @@ card_texture = ExtResource("1_srh8t")
 attack_damage = 4
 block_amount = 0
 energy_cost = 2
+explanation = "A normal attack and a normal block"
 body_part_type = 5
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"

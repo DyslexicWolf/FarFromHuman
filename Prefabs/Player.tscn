@@ -24,7 +24,7 @@ max_health = 10
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45875823, -0.23482281)
 
 [node name="VoodooDoll" parent="PlayerCamera" unique_id=1728398860 instance=ExtResource("2_x3d5u")]
-transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, -0.458758, -0.66295934)
+transform = Transform3D(-0.044654183, 0.30525216, 0.951224, 0.97801673, 0.20749904, -0.020675462, -0.2036893, 0.9293898, -0.30780742, -0.66108364, -0.4046539, -0.66295934)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1196226304]
 shape = SubResource("CapsuleShape3D_et8qu")

@@ -9,12 +9,10 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("PauseGame") and can_change_state:
-		if PlayerUI.in_combat:
-			transitioned.emit(self, "CombatUIState")
-		else:
-			transitioned.emit(self, "IdleUIState")
-	elif event.is_action_pressed("CloseUI") and can_change_state:
+	if (
+		(event.is_action_pressed("PauseGame") or event.is_action_pressed("CloseUI"))
+		and can_change_state
+	):
 		if PlayerUI.in_combat:
 			transitioned.emit(self, "CombatUIState")
 		else:
@@ -34,3 +32,14 @@ func _exit() -> void:
 
 func _state_physics_process(_delta: float) -> void:
 	pass
+
+
+func _on_resume_button_pressed() -> void:
+	if PlayerUI.in_combat:
+		transitioned.emit(self, "CombatUIState")
+	else:
+		transitioned.emit(self, "IdleUIState")
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

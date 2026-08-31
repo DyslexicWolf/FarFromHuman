@@ -47,6 +47,10 @@ enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", 
 
 Player="A global group where the player sits in."
 
+[gui]
+
+theme/custom_font="uid://fjtegksobghg"
+
 [input]
 
 Inventory={

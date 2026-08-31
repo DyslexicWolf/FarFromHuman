@@ -8,5 +8,6 @@ script = ExtResource("2_cfjfv")
 card_name = "Normal Arm"
 card_texture = ExtResource("1_eo5eh")
 block_amount = 3
+explanation = "A normal attack and a normal block"
 body_part_type = 2
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"
