@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dwqjvmndmol3j"]
 
-[ext_resource type="Terrain3DMaterial" uid="uid://dcs7a68do5dgg" path="res://TerrainData/terrain_3d_material.tres" id="1_c0a7e"]
-[ext_resource type="Environment" uid="uid://dr7h56vckxq02" path="res://TerrainData/Environment.tres" id="1_ukis8"]
-[ext_resource type="Terrain3DAssets" uid="uid://00cbenhskr7e" path="res://TerrainData/terrain_3d_assets.tres" id="2_vsrlw"]
+[ext_resource type="Terrain3DMaterial" uid="uid://dcs7a68do5dgg" path="res://TerrainData/Village/terrain_3d_material.tres" id="1_c0a7e"]
+[ext_resource type="Environment" uid="uid://dr7h56vckxq02" path="res://TerrainData/Village/Environment.tres" id="1_ukis8"]
+[ext_resource type="Terrain3DAssets" uid="uid://00cbenhskr7e" path="res://TerrainData/Village/terrain_3d_assets.tres" id="2_vsrlw"]
 [ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Tree.tscn" id="4_wc6fi"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
+[ext_resource type="PackedScene" uid="uid://crs34cb0twcji" path="res://Prefabs/Rock/Rock.tscn" id="6_xo2t3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ukis8"]
 
@@ -30,7 +31,7 @@ environment = ExtResource("1_ukis8")
 navigation_mesh = SubResource("NavigationMesh_ukis8")
 
 [node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D" unique_id=391837472]
-data_directory = "res://TerrainData"
+data_directory = "res://TerrainData/Village"
 material = ExtResource("1_c0a7e")
 assets = ExtResource("2_vsrlw")
 collision_layer = 2
@@ -56,3 +57,6 @@ transform = Transform3D(-0.4911725, -0.020396717, 0.87082344, -0.027986715, 0.99
 
 [node name="Player" parent="." unique_id=457108580 instance=ExtResource("5_ukis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39942, 3.2864642, 125.12516)
+
+[node name="Rock" parent="." unique_id=1065965341 instance=ExtResource("6_xo2t3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.30575, 0.84706867, 118.5947)

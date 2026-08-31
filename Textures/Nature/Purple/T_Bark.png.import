@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g8dctmvb5ipb"
-path.bptc="res://.godot/imported/T_FuzzyGrass.png-f4a8bdb23fa4b4a9fbb603fd5199699e.bptc.ctex"
+uid="uid://21mymj2cl8yj"
+path.s3tc="res://.godot/imported/T_Bark.png-259ed23e3f7927c1e71d97b57e2404bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,20 +11,20 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Nature/T_FuzzyGrass.png"
-dest_files=["res://.godot/imported/T_FuzzyGrass.png-f4a8bdb23fa4b4a9fbb603fd5199699e.bptc.ctex"]
+source_file="res://Textures/Nature/Purple/T_Bark.png"
+dest_files=["res://.godot/imported/T_Bark.png-259ed23e3f7927c1e71d97b57e2404bd.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

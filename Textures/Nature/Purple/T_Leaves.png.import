@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfd0akhd5185m"
-path.bptc="res://.godot/imported/T_Packed_Path.png-aa392bb8d0686028c301da3670d4e46d.bptc.ctex"
+uid="uid://cs2vvejkjj6ue"
+path.s3tc="res://.godot/imported/T_Leaves.png-0648ea7a4bf5e2f5c5f31f68a744b1a5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Packed/T_Packed_Path.png"
-dest_files=["res://.godot/imported/T_Packed_Path.png-aa392bb8d0686028c301da3670d4e46d.bptc.ctex"]
+source_file="res://Textures/Nature/Purple/T_Leaves.png"
+dest_files=["res://.godot/imported/T_Leaves.png-0648ea7a4bf5e2f5c5f31f68a744b1a5.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4kck8se31st0"
-path.bptc="res://.godot/imported/T_Heightmap_Grass.png-f98d555e28d6fd804f1e1531d800e071.bptc.ctex"
+uid="uid://dfd0akhd5185m"
+path.bptc="res://.godot/imported/T_Packed_Path.png-663dc72b334a81643839b3934861399d.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Nature/T_Heightmap_Grass.png"
-dest_files=["res://.godot/imported/T_Heightmap_Grass.png-f98d555e28d6fd804f1e1531d800e071.bptc.ctex"]
+source_file="res://Textures/Packed/Green/T_Packed_Path.png"
+dest_files=["res://.godot/imported/T_Packed_Path.png-663dc72b334a81643839b3934861399d.bptc.ctex"]
 
 [params]
 

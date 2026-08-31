@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cib3qpxxcra2o"]
+
+[ext_resource type="PackedScene" uid="uid://bcxlwd2veue2f" path="res://Prefabs/Kitty/CHAR_Kitty.glb" id="1_qndfv"]
+[ext_resource type="Material" uid="uid://kjtddonujq6h" path="res://Prefabs/Kitty/MAT_Kitty.tres" id="2_d17oq"]
+
+[node name="Kitty" type="CollisionShape3D" unique_id=205950606]
+
+[node name="CHAR_Kitty" parent="." unique_id=889492436 instance=ExtResource("1_qndfv")]
+
+[node name="DM_Kitty" parent="CHAR_Kitty" index="0" unique_id=1222190744]
+material_override = ExtResource("2_d17oq")
+
+[editable path="CHAR_Kitty"]

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e4tqw7617fw5"
-path.s3tc="res://.godot/imported/T_UndersideLeaves.png-689f17494fa30cccc9ce17886b3ad813.s3tc.ctex"
+uid="uid://y4oo5n85yli2"
+path.s3tc="res://.godot/imported/T_Leaves.png-6b87613e364d38063152deb258afbf61.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Nature/T_UndersideLeaves.png"
-dest_files=["res://.godot/imported/T_UndersideLeaves.png-689f17494fa30cccc9ce17886b3ad813.s3tc.ctex"]
+source_file="res://Textures/Nature/Green/T_Leaves.png"
+dest_files=["res://.godot/imported/T_Leaves.png-6b87613e364d38063152deb258afbf61.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
