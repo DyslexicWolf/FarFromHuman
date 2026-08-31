@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bsqfovkpuabp2"]
 
-[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/SH_Leaves.gdshader" id="1_w8r4s"]
+[ext_resource type="Shader" uid="uid://08nms42qyh65" path="res://Prefabs/Tree/Green/SH_Leaves.gdshader" id="1_w8r4s"]
 [ext_resource type="Texture2D" uid="uid://e4tqw7617fw5" path="res://Textures/Nature/Green/T_UndersideLeaves.png" id="2_m1hqx"]
 
 [resource]
