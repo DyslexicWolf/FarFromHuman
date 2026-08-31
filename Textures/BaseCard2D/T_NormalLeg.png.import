@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eu54hgdvkctn"
-path="res://.godot/imported/T_NormalLeg.png-1a819ff47c4e177bc7f5b42167960815.ctex"
+uid="uid://ysqk7hihsad1"
+path="res://.godot/imported/T_NormalLeg.png-2f9fdb6491a9fd6e46d3415edb4f0b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_NormalLeg.png"
-dest_files=["res://.godot/imported/T_NormalLeg.png-1a819ff47c4e177bc7f5b42167960815.ctex"]
+source_file="res://Textures/BaseCard2D/T_NormalLeg.png"
+dest_files=["res://.godot/imported/T_NormalLeg.png-2f9fdb6491a9fd6e46d3415edb4f0b05.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkd5ecqbp0xju"
-path="res://.godot/imported/T_NormalArm.png-af0d691945c57095e571635d9e2189a6.ctex"
+uid="uid://bspkummdleckh"
+path="res://.godot/imported/T_NormalHead.png-c3420c1a6d7c35da5141c1d1e2d582d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/T_NormalArm.png"
-dest_files=["res://.godot/imported/T_NormalArm.png-af0d691945c57095e571635d9e2189a6.ctex"]
+source_file="res://Textures/BaseCard2D/T_NormalHead.png"
+dest_files=["res://.godot/imported/T_NormalHead.png-c3420c1a6d7c35da5141c1d1e2d582d5.ctex"]
 
 [params]
 
