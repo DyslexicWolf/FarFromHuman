@@ -5,4 +5,5 @@
 
 [resource]
 script = ExtResource("1_hp63p")
+explanation = "A normal attack and a normal block"
 metadata/_custom_type_script = "uid://drsqxb1onfrgq"

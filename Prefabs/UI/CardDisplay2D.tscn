@@ -50,11 +50,11 @@ vertical_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2034442843]
 custom_maximum_size = Vector2(300, 400)
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = 5
 
 [node name="CardName" type="RichTextLabel" parent="VBoxContainer" unique_id=911400901]
-custom_minimum_size = Vector2(0, 45)
-custom_maximum_size = Vector2(-1, 60)
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(-1, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
