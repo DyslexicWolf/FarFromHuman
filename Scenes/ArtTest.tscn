@@ -3,7 +3,7 @@
 [ext_resource type="Terrain3DMaterial" uid="uid://dcs7a68do5dgg" path="res://TerrainData/Village/terrain_3d_material.tres" id="1_c0a7e"]
 [ext_resource type="Environment" uid="uid://dr7h56vckxq02" path="res://TerrainData/Village/Environment.tres" id="1_ukis8"]
 [ext_resource type="Terrain3DAssets" uid="uid://00cbenhskr7e" path="res://TerrainData/Village/terrain_3d_assets.tres" id="2_vsrlw"]
-[ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Tree.tscn" id="4_wc6fi"]
+[ext_resource type="PackedScene" uid="uid://dm00xhavw43c3" path="res://Prefabs/Tree/Green/Tree.tscn" id="4_wc6fi"]
 [ext_resource type="PackedScene" uid="uid://qq214t11g7t" path="res://Prefabs/Player.tscn" id="5_ukis8"]
 [ext_resource type="PackedScene" uid="uid://crs34cb0twcji" path="res://Prefabs/Rock/Rock.tscn" id="6_xo2t3"]
 

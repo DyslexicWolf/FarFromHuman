@@ -1,5 +1,26 @@
 [gd_resource type="Terrain3DMaterial" format=3 uid="uid://dcs7a68do5dgg"]
 
+[sub_resource type="Gradient" id="Gradient_1ansd"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1c7bh"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ajsfb"]
+noise = SubResource("FastNoiseLite_1c7bh")
+color_ramp = SubResource("Gradient_1ansd")
+seamless = true
+
 [sub_resource type="Shader" id="Shader_pl7wj"]
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,skip_vertex_transform;
@@ -568,6 +589,28 @@ void fragment() {
 "
 
 [resource]
+_shader_parameters = {
+&"auto_base_texture": null,
+&"auto_height_reduction": null,
+&"auto_overlay_texture": null,
+&"auto_slope": null,
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_ajsfb"),
+&"projection_threshold": null
+}
 world_background = 0
 texture_filtering = 1
 auto_shader = true
